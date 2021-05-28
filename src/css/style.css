@@ -1,0 +1,39 @@
+@import "./partials/wotfard.pcss";
+@import "./partials/variables.pcss";
+
+@import "tailwindcss/base.css";
+@import "./partials/layout.pcss";
+
+@import "tailwindcss/components.css";
+@import "./partials/theme-toggler.pcss";
+@import "./partials/off-menu.pcss";
+@import "./partials/home-social.pcss";
+
+@import "tailwindcss/utilities.css";
+
+
+.root-hidden {
+    display: none !important;
+}
+.root-block {
+    display: block !important;
+}
+
+.js-only, .sm-js-only {
+    display: none;
+}
+html.js-present .js-only {
+    display: inline-block;
+}
+
+@media (max-width: 640px) {
+    html.js-present .sm-js-only {
+        display: inline-block;
+    }
+    .sm-no-js {
+        display: inline-block !important;
+    }
+    html.js-present .sm-no-js {
+        display: none !important;
+    }
+}
