@@ -6,8 +6,7 @@
     <meta name="color-scheme" content="dark light">
     <title>Index HTML File</title>
     <link href="/css/style.css" rel="stylesheet" type="text/css">
-    <script>(function(){var a=window.localStorage.getItem("color-theme");"string"===typeof a&&"system"!==a.trim().toLowerCase()&&-1<["light","dark"].indexOf(a.trim())||(a=window.matchMedia("(prefers-color-scheme: dark)"),a="boolean"===typeof a.matches?a.matches?"dark":"light":"light",window.localStorage.setItem("color-theme","system"));a&&""!==a?document.querySelector("html").classList.add("js-present"):document.querySelector("html").classList.remove("js-present");"dark"===a?document.querySelector("html").classList.add("theme-dark"):
-        document.querySelector("html").classList.remove("theme-dark")})();</script>
+    <script src="../js/sync-script.inline.js" inline></script>
 </head>
 <body>
 <div class="page-container">
@@ -61,8 +60,8 @@
                     </ul>
                 </div>
             </div>
-            <div class="off-menu-show sm:hidden sm-js-only">
-                <button class="bg-site-home-intro-social-hover text-site-body-bgcolor p-2 rounded">
+            <div class="off-menu-show sm:hidden sm-js-only sm-aria-show">
+                <button class="bg-site-home-intro-social-hover text-site-body-bgcolor p-2 rounded" aria-label="Menu">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
                     </svg>
@@ -120,12 +119,12 @@
     </footer>
 </div>
 
-<aside class="off-menu root-hidden smmax:flex sm-js-only">
+<aside class="off-menu root-hidden smmax:flex sm-js-only sm-aria-show">
     <ul class="off-menu-list" role="list">
         <li class="text-center flex items-center justify-between pt-8 mb-4 w-full h-header">
             <div class="theme-switcher-off-menu-holder"></div>
             <div class="off-menu-close pr-social">
-                <button class="bg-site-home-intro-social-hover text-site-body-bgcolor p-2 rounded">
+                <button class="bg-site-home-intro-social-hover text-site-body-bgcolor p-2 rounded" aria-label="Close Menu">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
                     </svg>
@@ -138,6 +137,6 @@
 </aside>
 
 <div class="mask root-hidden"></div>
-<script type="module" src="/js/scripts.js" defer></script>
+<script src="/js/all.script.js" defer></script>
 </body>
 </html>

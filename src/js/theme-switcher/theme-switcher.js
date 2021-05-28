@@ -1,3 +1,5 @@
+'use strict';
+
 function themeSwitcherOptionsHtml() {
     return {
         system: `<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 inline-block" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -322,4 +324,4 @@ const onloadFns = () => {
     themeSwitchOptionsKeydownEvt();
 };
 
-export { onloadFns, closeThemeSwitcherIfClickedOutside };
+module.exports = { onloadFns, closeThemeSwitcherIfClickedOutside };

@@ -1,3 +1,5 @@
+'use strict';
+
 import * as theme from './theme-switcher/theme-switcher';
 
 function closeAllMaskComponents() {
@@ -66,14 +68,47 @@ function showOffMenu() {
     });
 }
 
+function getAllChildren(obj) {
+    if (obj.children.length === 0) {
+        return [];
+    }
+    const children = Array.from(obj.children);
+    children.forEach((child) => {
+        children.push(...getAllChildren(child));
+    });
+    return children;
+}
+
+function removeAriaHiddenOnSmallScreen() {
+    const width = window.innerWidth;
+    const objs = document.querySelectorAll('.sm-aria-show');
+    objs.forEach((obj) => {
+        if (width <= 640) {
+            obj.removeAttribute('aria-hidden');
+            const children = getAllChildren(obj);
+            children.forEach((child) => {
+                child.removeAttribute('aria-hidden');
+            });
+        } else {
+            obj.setAttribute('aria-hidden', 'true');
+            const children = getAllChildren(obj);
+            children.forEach((child) => {
+                child.setAttribute('aria-hidden', 'true');
+            });
+        }
+    });
+}
+
 window.addEventListener('DOMContentLoaded', () => {
     theme.onloadFns();
     documentClickEvt();
     copyThemeSwitcherToOffMenu();
     closeOffMenu();
     showOffMenu();
+    removeAriaHiddenOnSmallScreen();
 });
 
 window.addEventListener('resize', () => {
     copyThemeSwitcherToOffMenu();
+    removeAriaHiddenOnSmallScreen();
 });
