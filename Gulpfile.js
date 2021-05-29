@@ -25,6 +25,7 @@ const serve = require('gulp-webserver');
 const rev = require('gulp-rev');
 const revReplace = require("gulp-rev-replace");
 const inlineSource = require('gulp-inline-source');
+const browserSync = require("browser-sync").create();
 
 const paths = {
     dist: {
@@ -74,10 +75,11 @@ gulp.task('watch:html', () => {
 gulp.task('build:inline:js:html', () => {
     return gulp.src(`${paths.src.html}/**/*.html`)
         .pipe(inlineSource({ compress: true }))
-        .pipe(gulp.dest(`${paths.dist.html}`));
+        .pipe(gulp.dest(`${paths.dist.html}`))
+        .pipe(browserSync.stream());
 });
 gulp.task('watch:inline:js:html', () => {
-    gulp.watch([`${paths.src.js}/**/*.inline.js`, `${paths.src.html}/**/*.html`], gulp.series('build:inline:js:html'));
+    gulp.watch([`${paths.src.js}/**/*.inline.js`, `${paths.src.html}/**/*.html`], gulp.series('build:css', 'build:inline:js:html'));
 });
 
 // IMAGES TASKS
@@ -106,7 +108,8 @@ gulp.task('build:js', () => {
         .pipe(gulp.dest(paths.dist.js))
         .pipe(process.env.NODE_ENV && process.env.NODE_ENV === 'production' ?
             rev.manifest(`${paths.dist.html}/manifest.json`, { merge: true }) : noop())
-        .pipe(gulp.dest('.'));
+        .pipe(gulp.dest('.'))
+        .pipe(browserSync.stream());
 });
 gulp.task('watch:js', () => {
     gulp.watch(`${paths.src.js}/**/*.script.js`, gulp.series('build:js'));
@@ -129,7 +132,8 @@ gulp.task('build:css', () => {
         .pipe(gulp.dest(`${paths.dist.css}`))
         .pipe(process.env.NODE_ENV && process.env.NODE_ENV === 'production' ?
             rev.manifest(`${paths.dist.html}/manifest.json`, { merge: true }) : noop())
-        .pipe(gulp.dest('.'));
+        .pipe(gulp.dest('.'))
+        .pipe(browserSync.stream());
 });
 gulp.task('watch:css', () => {
     gulp.watch(`${paths.src.css}/**/*`, gulp.series('build:css'));
@@ -162,17 +166,23 @@ gulp.task('rev-replace', () => {
 });
 
 gulp.task('serve', (cb) => {
-    gulp.src(paths.dist.html)
-        .pipe(serve({
-            livereload: true,
-            open: false,
-            port: 8080,
-            https: {
-                cert: '/Users/shubhatt/.certbot/config-dir/live/shubhomeet.net/fullchain.pem',
-                key: '/Users/shubhatt/.certbot/config-dir/live/shubhomeet.net/privkey.pem'
-            },
-            host: 'html.shubhomeet.net'
-        }));
+    // gulp.src(paths.dist.html)
+    //     .pipe(serve({
+    //         livereload: true,
+    //         open: false,
+    //         port: 8080,
+    //         https: {
+    //             cert: '/Users/shubhatt/.certbot/config-dir/live/shubhomeet.net/fullchain.pem',
+    //             key: '/Users/shubhatt/.certbot/config-dir/live/shubhomeet.net/privkey.pem'
+    //         },
+    //         host: 'html.shubhomeet.net'
+    //     }));
+    browserSync.init({
+        server: {
+            baseDir: paths.dist.html,
+        },
+        open: false
+    });
     cb();
 });
 

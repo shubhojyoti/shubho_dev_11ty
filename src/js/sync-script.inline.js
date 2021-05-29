@@ -33,6 +33,6 @@
         document.querySelector('html').classList.add('js-present');
     } else {
         document.querySelector('html').classList.remove('theme-dark');
-        document.querySelector('html').classList.remove('js-present');
+        document.querySelector('html').classList.add('js-present');
     }
 })();

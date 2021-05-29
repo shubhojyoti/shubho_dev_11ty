@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html class="singlepage" dir="ltr" lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="color-scheme" content="dark light">
+    <title>Index HTML File</title>
+    <link href="/css/style.css" rel="stylesheet" type="text/css">
+    <link rel="preload" href="/css/fonts.css" as="style">
+    <script src="../js/sync-script.inline.js" inline></script>
+    <link rel="preload" href="/js/scripts.js" as="script">
+</head>
+<body>
+<div class="page-container">
+    <header role="banner">
+        <a href="#page-main-content" id="skip-content-link">Skip to Content</a>
+        <div class="header-container justify-between">
+            <div class="logo-container">
+                <a href="index.html" title="Home Page">
+                    <img src="/images/lightlogo.svg" alt="Shubho.dev logo" width="163" height="48" class="site-logo">
+                </a>
+            </div>
+            <nav class="top-nav mr-12 max-sm:w-full smmax:hidden sm-no-js" aria-label="Primary Navigation" role="navigation">
+                <ul class="list-none text-right max-sm:text-left max-sm:mt-4 max-sm:mb-4" role="list">
+                    <li class="inline-block uppercase"><a href="/blog/" class="primary-nav-link" title="Blog">Blog</a></li>
+                    <li class="inline-block uppercase ml-2.5"><a href="/about/" class="primary-nav-link" title="About me">About</a></li>
+                </ul>
+            </nav>
+            <div class="theme-toggler-holder smmax:hidden js-only">
+                <div class="theme-toggler relative">
+                    <span id="theme-switch-label" class="absolute right-offscreen">Choose a color theme</span>
+                    <button id="theme-switcher-btn" class="theme-switcher" role="button" aria-haspopup="listbox" aria-expanded="false" aria-labelledby="theme-switch-label theme-switcher-btn" aria-label="Using system default theme">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 inline-block" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                        </svg>
+                        <span class="inline-block ml-1">System Default</span>
+                    </button>
+                    <ul class="theme-switcher-options" tabindex="-1" aria-labelledby="theme-switch-label" role="listbox">
+                        <li id="theme-light-option" tabindex="-1" class="theme-switcher-list-item" role="option" data-option="light">
+                            <div class="theme-switcher-link">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 inline-block" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/>
+                                </svg>
+                                <span class="inline-block ml-1">Light Theme</span>
+                            </div>
+                        </li>
+                        <li id="theme-dark-option" tabindex="-1" class="theme-switcher-list-item" role="option" data-option="dark">
+                            <div class="theme-switcher-link">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 inline-block" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/>
+                                </svg>
+                                <span class="inline-block ml-1">Dark Theme</span>
+                            </div>
+                        </li>
+                        <li id="theme-system-option" tabindex="-1" class="theme-switcher-list-item !border-b border-site-body-bgcolor" aria-selected="true" role="option" data-option="system">
+                            <div class="theme-switcher-link">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 inline-block" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                                </svg>
+                                <span class="inline-block ml-1">System Default</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="off-menu-show sm:hidden sm-js-only sm-aria-show pr-4">
+                <button class="bg-site-home-intro-social-hover text-site-body-bgcolor p-2 rounded" aria-label="Menu">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main class="blog-post-full" role="main" tabindex="-1">
+
+        <div class="post-bg-image" aria-hidden="true" tabindex="-1">
+<!--            PLACE THE FEATURE IMAGES HERE -->
+        </div>
+
+        <article class="article single-article" aria-labelledby="page-main-content">
+            <header>
+                <h1 id="page-main-content" class="article-title">How I created my GatsbyJS blog with WordPress as the backend</h1>
+                <div class="metadata">
+                    <time class="datetime" datetime="2021-06-01">August 03, 2019</time>
+                    <ul class="post-tags" role="list" aria-label="Categories and Tags">
+                        <li><a href="/coding" title="Coding">Coding</a></li>
+                        <li><a href="/wordpress" title="WordPress">WordPress</a></li>
+                        <li><a href="/gatsby" title="Gatsby">Gatsby</a></li>
+                    </ul>
+                    <div class="read-time">4 min read</div>
+                </div>
+            </header>
+            <hr>
+            <div class="article-body">
+                <p>Recently, I created my blog again after junking my writings on my other domains. My previous experience with Static Site Generators (SSG) was Hugo. This time I used Gatsby as my primary work deals with JavaScript, so it was a quick development process for me. For the backend, I used WordPress.</p>
+                <p>I plan to write a multi-post series as I have lots of notes on how I went about it. There are still some CSS polishing required. But overall, the site is ready. This part has loads of rambling, so feel free to skip it.</p>
+                <h2>Why do I use SSGs? - A history.</h2>
+                <p>I don’t know about you, but I love static sites. There are no headaches involved. Just plain HTML and CSS with a dash of JavaScript if required. That is how I learnt about developing websites. It was later that I realized maintaining them is a headache. A single change in the theme required changing and keeping track of all the files. It was 2005 when I discovered WordPress. I was going to start college during the summer, and I wanted to use something for my journal. I stuck with WordPress for the next 8-10 years. My main issue was it was slow even though my blog received barely any traffic. I used the recommended caching plugins, which improved it. But it was always an extra step.</p>
+                <p>Then I found Hugo. I moved my <a href="https://www.enjoyable.recipes" title="Enjoyable Recipes">Enjoyable Recipes</a> blog in 2017. It was a mess. I learned Go language, even though it was not required. The build was super fast, and I loved the speed with which the site loaded. However, there were multiple breaking changes in later versions. Shifting mentally from JavaScript development at work to Golang was too much for me at that time. So during the current redesign, I considered a JavaScript-based SSG. I studied Gatsby and Eleventy. Ultimately I decided on Gatsby because I was working on two React projects at that time so this was a natural fit.</p>
+                <h2>The Backend CMS</h2>
+                <p>I started with markdown files, moved to Contentful, finally settling on WordPress. I love writing in markdown. My Hugo blog is entirely in markdown as there is no other option. For the current site, I had the following requirements. These are solely my requirements. YMMV.</p>
+                <ol>
+                    <li><strong>Markdown Support</strong> - Contentful has native Markdown support. WordPress requires a plugin. Advantage Contentful.</li>
+                    <li><strong>Image Management</strong> - I didn’t want to check-in images to my repository. Also, I wanted automatic resizing wherever necessary. Netlify has support via Large Media. But I did not want to add LFS support. In case I decide to leave Netlify, I wanted the images resized with me. I considered Cloudinary too who have a generous free plan. But I did not want to add another provider. Contentful has automatic image management, which is fantastic. WordPress has Media Management and image resizing options via the plugin system. Advantage WordPress and Contentful.</li>
+                    <li><strong>Metadata for Images</strong> - Advanced Custom Fields (ACF) plugin for WordPress quickly add custom fields, and metadata support to posts, pages and images. Contentful only allows adding title, description and alt text. We need to create a separate content type for images and add extra fields. Advantage WordPress.</li>
+                    <li><strong>Categorization</strong> - Contentful supports categories and tags but in a round-about way. Everything needs to have a separate content type. WordPress has in-built support. Just type and press enter. Advantage WordPress.</li>
+                    <li><strong>Post Series Support</strong> - This is slightly difficult in Contentful and easier in WordPress. In Contentful, you can create references to other posts and then can link them in HTML. WordPress too does not support this natively. But it is easier (for me) using custom taxonomies. Tie between WordPress and Contentful.</li>
+                </ol>
+                <p>Considering the above requirements, WordPress was a better fit for me. However, I loved Contentful. Its interface is a beauty. Their free plan, their image support and no need to manage installations make it an excellent CMS. I also considered Ghost. But they have no image resize support yet, so it was out.</p>
+                <p>Finally, I write my posts in markdown. I manage these in a private repository so that I never lose them if my WordPress installation gets corrupted.</p>
+                <h2>Conclusion</h2>
+                <p>I know that was loads of rambling. In the next part, I will write about my WordPress setup and finally begin the finale - Gatsby integration. What do you use for your website?</p>
+            </div>
+            <hr>
+            <footer class="article-footer">
+                <nav role="navigation" aria-label="Pagination links" class="pagination">
+                    <a class="previous" href="/prev" data-direction="backwards"><svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true" focusable="false">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+                    </svg> <span>Previous post</span></a>
+                    <a class="next" href="/next" data-direction="forwards"><span>Next post</span> <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true" focusable="false">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                    </svg></a>
+                </nav>
+            </footer>
+        </article>
+
+
+    </main>
+
+    <footer class="site-footer mb-8" role="contentinfo">
+        <div class="bg-site-body-bgcolor max-w-1371 h-7.1 mx-auto mt-0 text-center text-site-text-color text-0.9">&copy; Copyright Shubhojyoti Bhattacharya 2019 - 2021.<br><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="p-0 !text-site-link-color hover:underline active:underline">Attribution-NonCommercial-ShareAlike</a></div>
+    </footer>
+</div>
+
+<aside class="off-menu root-hidden smmax:flex sm-js-only sm-aria-show">
+    <ul class="off-menu-list" role="list">
+        <li class="text-center flex items-center justify-between pt-8 mb-4 w-full h-header">
+            <div class="theme-switcher-off-menu-holder"></div>
+            <div class="off-menu-close pr-social">
+                <button class="bg-site-home-intro-social-hover text-site-body-bgcolor p-2 rounded" aria-label="Close Menu">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
+            </div>
+        </li>
+        <li class="off-menu-list-items mt-4"><a href="/blog/" class="off-menu-list-items-links block w-full !text-site-body-bgcolor hover:bg-site-home-intro-social-hover">Blog</a></li>
+        <li class="off-menu-list-items"><a href="/about/" class="off-menu-list-item-links block w-full !text-site-body-bgcolor hover:bg-site-home-intro-social-hover">About</a></li>
+    </ul>
+</aside>
+
+<div class="mask root-hidden" aria-hidden="true"></div>
+<link rel="stylesheet" href="/css/fonts.css" type="text/css">
+<script src="/js/scripts.js" defer></script>
+</body>
+</html>

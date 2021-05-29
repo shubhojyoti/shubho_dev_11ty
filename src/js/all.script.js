@@ -88,12 +88,14 @@ function removeAriaHiddenOnSmallScreen() {
             const children = getAllChildren(obj);
             children.forEach((child) => {
                 child.removeAttribute('aria-hidden');
+                child.removeAttribute('tabindex');
             });
         } else {
             obj.setAttribute('aria-hidden', 'true');
             const children = getAllChildren(obj);
             children.forEach((child) => {
                 child.setAttribute('aria-hidden', 'true');
+                child.setAttribute('tabindex', '-1');
             });
         }
     });

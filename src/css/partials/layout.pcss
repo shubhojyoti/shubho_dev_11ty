@@ -1,5 +1,6 @@
 html, body {
     @apply bg-site-body-bgcolor text-site-text-color h-full font-normal font-serif not-italic text-base;
+    overflow-x: hidden;
 }
 
 body {
@@ -7,14 +8,25 @@ body {
     @apply bg-no-repeat;
 }
 
-a:link, a:visited, a:hover, a:active {
+a:link, a:visited, a:hover {
     @apply text-site-invert-color cursor-pointer no-underline;
     padding: 5px 10px;
 }
+a:active {
+    @apply no-underline border border-site-invert-color text-site-invert-color cursor-pointer;
+    padding: 5px 10px;
+}
+
+a:hover {
+    @apply underline;
+}
 
 main {
-    @apply flex-1 max-w-85pc m-0;
     @apply mx-auto;
+    @apply flex flex-1 w-full max-w-1300 justify-between lgmax:flex-row lgmax:flex-wrap lg1max:max-w-full lg1max:mx-auto lg1max:mt-0 lg1max:mb-0 bg-site-body-bgcolor
+}
+main.blog-post-full {
+    @apply flex-col;
 }
 
 html.home main {
@@ -27,8 +39,40 @@ html.home main {
 .page-container > header {
     @apply relative z-1 h-header shadow-header;
 }
+header {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    z-index: 990;
+}
 header > .header-container {
-    @apply max-w-95pc lg:max-w-1371 h-full mx-auto mt-0 mb-0 grid items-center grid-cols-header grid-rows-header;
+    @apply lg:max-w-1300 h-full mx-auto mt-0 mb-0 grid items-center grid-cols-header grid-rows-header;
+}
+.primary-nav-link {
+    @apply hover:text-site-body-bgcolor hover:bg-site-invert-color;
+    @apply no-underline !important;
+}
+.logo-container {
+    padding-left: 2.2rem;
+    @apply lgmax:pl-4;
+}
+.logo-container a {
+    display: inline-block;
+    padding-left: 0 !important;
+}
+
+.pagination {
+    @apply flex justify-between mt-4 mb-4 text-xl;
+}
+.pagination [data-direction] {
+    @apply flex items-center justify-between hover:underline;
+}
+
+footer.site-footer {
+    @apply shadow-footer pt-4;
+}
+
+#skip-content-link {
+    @apply absolute top-4 left-4 pt-4 pb-4 pl-8 pr-8 ml-4 text-xl bg-site-post-tag-bgcolor text-site-text-color border border-site-article-separator no-underline max500:p-2 max500:text-sm max500:min-h-48 opacity-0 focus:opacity-100 -top-96 focus:top-auto;
 }
 
 @media (max-width: 640px) {
@@ -39,6 +83,15 @@ header > .header-container {
         display: flex;
         justify-content: space-between;
         align-items: center;
+    }
+}
+
+@media (max-width: 413px) {
+    .top-nav > ul > li {
+        height: 48px;
+    }
+    .top-nav > ul > li > a {
+        padding: 1rem 10px;
     }
 }
 
