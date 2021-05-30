@@ -1,54 +1,20 @@
-
 .theme-toggler {
-    padding: 0.5em 1em;
+    padding: 0.5em 0 0.5em 1em;
     border-radius: 5px;
     display: flex;
     align-items: center;
-}
-.theme-toggler-label {
-    @apply font-bold cursor-pointer;
-}
-.theme-toggle-text {
-    @apply font-normal inline-block align-middle flex-1 mr-2.5;
-}
-.theme-toggler-chkbox {
-    @apply opacity-0 absolute right-7.1 top-1/4 z-1;
-}
-.theme-toggler-chkbox:checked + .theme-toggler-switch {
-    @apply bg-site-switch-body-on-bgcolor border-site-switch-body-on-bordercolor;
-}
-.theme-toggler-switch {
-    @apply relative cursor-pointer bg-site-switch-body-off-bgcolor border border-site-switch-body-off-bordercolor border-solid inline-block align-middle;
-    width: 51px;
-    height: 26px;
-    border-radius: 1em;
-    transition: all 0.1s linear;
-}
-.theme-toggler-chkbox:checked + .theme-toggler-switch::after {
-    transform: translatex(26px);
-    transition: transform 0.1s linear;
-    @apply bg-site-switch-thumb-on-bgcolor border-site-switch-thumb-on-bordercolor;
-}
-.theme-toggler-switch::after {
-    content: "";
-    position: absolute;
-    width: 24px;
-    height: 24px;
-    @apply absolute mt-0 -ml-px bg-site-switch-thumb-off-bgcolor border border-solid border-site-switch-thumb-off-bordercolor;
-    border-radius: 1em;
-    box-shadow: 2px 5px 10px -2px rgba(0, 0, 0, 0.2);
-    transition: all 0.1s linear;
+
 }
 .theme-switcher {
     @apply rounded bg-site-home-intro-social-hover hover:bg-site-text-color transition duration-500 ease-in-out text-site-body-bgcolor pt-2 pb-2 pl-2 pr-2 z-10 flex justify-center items-center relative text-sm w-152px box-border;
 }
 .theme-switcher.theme-switcher-btn--active {
     @apply bg-site-text-color;
-    //outline: 5px auto -webkit-focus-ring-color;
 }
 .theme-switcher-options {
-    @apply h-0 max-h-0 overflow-hidden absolute z-10 left-0 right-0 flex flex-col items-center justify-center mt-42 border border-2 border-transparent w-149px mx-auto box-border;
+    @apply h-0 max-h-0 overflow-hidden absolute left-0 right-0 pl-4 flex flex-col items-center justify-center mt-42 border border-2 border-transparent mx-auto box-border;
     transition: max-height 0.5s ease-out;
+    z-index: 2;
 }
 .theme-switcher-options.expanded {
     @apply h-full max-h-full overflow-visible;

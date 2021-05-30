@@ -2,157 +2,257 @@
 <html class="singlepage" dir="ltr" lang="en">
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="color-scheme" content="dark light">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="dark light" name="color-scheme">
     <title>Index HTML File</title>
     <link href="/css/style.css" rel="stylesheet" type="text/css">
-    <link rel="preload" href="/css/fonts.css" as="style">
-    <script src="../js/sync-script.inline.js" inline></script>
-    <link rel="preload" href="/js/scripts.js" as="script">
+    <link as="style" href="/css/fonts.css" rel="preload">
+    <script inline src="../js/sync-script.inline.js"></script>
+    <link as="script" href="/js/scripts.js" rel="preload">
 </head>
 <body>
 <div class="page-container">
     <header role="banner">
-        <a href="#page-main-content" id="skip-content-link">Skip to Content</a>
-        <div class="header-container justify-between">
+        <div class="header-container">
             <div class="logo-container">
-                <a href="index.html" title="Home Page">
-                    <img src="/images/lightlogo.svg" alt="Shubho.dev logo" width="163" height="48" class="site-logo">
+                <a href="#page-main-content" id="skip-content-link">Jump to Main Content</a>
+                <a aria-label="Go to Home page" class="logo" href="index.html" title="Home Page">
+                    <img alt="Shubho.dev logo" aria-hidden="true" class="site-logo" height="48" src="/images/lightlogo.svg" width="163">
                 </a>
             </div>
-            <nav class="top-nav mr-12 max-sm:w-full smmax:hidden sm-no-js" aria-label="Primary Navigation" role="navigation">
-                <ul class="list-none text-right max-sm:text-left max-sm:mt-4 max-sm:mb-4" role="list">
-                    <li class="inline-block uppercase"><a href="/blog/" class="primary-nav-link" title="Blog">Blog</a></li>
-                    <li class="inline-block uppercase ml-2.5"><a href="/about/" class="primary-nav-link" title="About me">About</a></li>
-                </ul>
-            </nav>
-            <div class="theme-toggler-holder smmax:hidden js-only">
-                <div class="theme-toggler relative">
-                    <span id="theme-switch-label" class="absolute right-offscreen">Choose a color theme</span>
-                    <button id="theme-switcher-btn" class="theme-switcher" role="button" aria-haspopup="listbox" aria-expanded="false" aria-labelledby="theme-switch-label theme-switcher-btn" aria-label="Using system default theme">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 inline-block" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
-                        </svg>
-                        <span class="inline-block ml-1">System Default</span>
-                    </button>
-                    <ul class="theme-switcher-options" tabindex="-1" aria-labelledby="theme-switch-label" role="listbox">
-                        <li id="theme-light-option" tabindex="-1" class="theme-switcher-list-item" role="option" data-option="light">
-                            <div class="theme-switcher-link">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 inline-block" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/>
-                                </svg>
-                                <span class="inline-block ml-1">Light Theme</span>
-                            </div>
-                        </li>
-                        <li id="theme-dark-option" tabindex="-1" class="theme-switcher-list-item" role="option" data-option="dark">
-                            <div class="theme-switcher-link">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 inline-block" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/>
-                                </svg>
-                                <span class="inline-block ml-1">Dark Theme</span>
-                            </div>
-                        </li>
-                        <li id="theme-system-option" tabindex="-1" class="theme-switcher-list-item !border-b border-site-body-bgcolor" aria-selected="true" role="option" data-option="system">
-                            <div class="theme-switcher-link">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 inline-block" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
-                                </svg>
-                                <span class="inline-block ml-1">System Default</span>
-                            </div>
-                        </li>
+            <div class="nav-container">
+                <nav aria-label="Primary Navigation" class="top-nav max-sm:w-full" role="navigation">
+                    <ul role="list">
+                        <li><a class="primary-nav-link" href="blog.html" title="Blog">Blog</a></li>
+                        <li><a class="primary-nav-link" href="/about/" title="About me">About</a></li>
                     </ul>
+                </nav>
+                <div class="theme-toggler-holder js-only">
+                    <div class="theme-toggler relative">
+                        <span class="absolute right-offscreen" id="theme-switch-label">Choose a color theme</span>
+                        <button aria-expanded="false" aria-haspopup="listbox" aria-label="Using system default theme" aria-labelledby="theme-switch-label theme-switcher-btn" class="theme-switcher" id="theme-switcher-btn" role="button">
+                            <svg aria-hidden="false" class="h-6 w-6 inline-block" fill="none" focusable="false" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+                            </svg>
+                            <span class="inline-block ml-1">System Default</span>
+                        </button>
+                        <ul aria-labelledby="theme-switch-label" class="theme-switcher-options" role="listbox" tabindex="-1">
+                            <li class="theme-switcher-list-item" data-option="light" id="theme-light-option" role="option" tabindex="-1">
+                                <div class="theme-switcher-link">
+                                    <svg aria-hidden="false" class="h-6 w-6 inline-block" fill="none" focusable="false" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+                                    </svg>
+                                    <span class="inline-block ml-1">Light Theme</span>
+                                </div>
+                            </li>
+                            <li class="theme-switcher-list-item" data-option="dark" id="theme-dark-option" role="option" tabindex="-1">
+                                <div class="theme-switcher-link">
+                                    <svg aria-hidden="false" class="h-6 w-6 inline-block" fill="none" focusable="false" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+                                    </svg>
+                                    <span class="inline-block ml-1">Dark Theme</span>
+                                </div>
+                            </li>
+                            <li aria-selected="true" class="theme-switcher-list-item !border-b border-site-body-bgcolor" data-option="system" id="theme-system-option" role="option" tabindex="-1">
+                                <div class="theme-switcher-link">
+                                    <svg aria-hidden="false" class="h-6 w-6 inline-block" fill="none" focusable="false" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+                                    </svg>
+                                    <span class="inline-block ml-1">System Default</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
-            </div>
-            <div class="off-menu-show sm:hidden sm-js-only sm-aria-show pr-4">
-                <button class="bg-site-home-intro-social-hover text-site-body-bgcolor p-2 rounded" aria-label="Menu">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-                    </svg>
-                </button>
             </div>
         </div>
     </header>
 
-    <main class="blog-post-full" role="main" tabindex="-1">
-
-        <div class="post-bg-image" aria-hidden="true" tabindex="-1">
-<!--            PLACE THE FEATURE IMAGES HERE -->
-        </div>
-
-        <article class="article single-article" aria-labelledby="page-main-content">
-            <header>
-                <h1 id="page-main-content" class="article-title">How I created my GatsbyJS blog with WordPress as the backend</h1>
-                <div class="metadata">
-                    <time class="datetime" datetime="2021-06-01">August 03, 2019</time>
-                    <ul class="post-tags" role="list" aria-label="Categories and Tags">
-                        <li><a href="/coding" title="Coding">Coding</a></li>
-                        <li><a href="/wordpress" title="WordPress">WordPress</a></li>
-                        <li><a href="/gatsby" title="Gatsby">Gatsby</a></li>
-                    </ul>
-                    <div class="read-time">4 min read</div>
+    <main class="single-post" tabindex="-1">
+        <article aria-labelledby="page-main-content" class="single-post-article">
+            <header class="article-header">
+                <div aria-hidden="true" class="post-bg-image">
+                    <picture><source media="(max-width: 360px)" data-srcset="https://cdn.shubho.dev/shubho.dev/uploads/2019/07/25171207/javascript-306x120.jpg" srcset="https://cdn.shubho.dev/shubho.dev/uploads/2019/07/25171207/javascript-306x120.jpg"><source media="(max-width: 499px)" data-srcset="https://cdn.shubho.dev/shubho.dev/uploads/2019/07/25171207/javascript-425x255.jpg" srcset="https://cdn.shubho.dev/shubho.dev/uploads/2019/07/25171207/javascript-425x255.jpg"><source media="(max-width: 768px)" data-srcset="https://cdn.shubho.dev/shubho.dev/uploads/2019/07/25171207/javascript-652x300.jpg" srcset="https://cdn.shubho.dev/shubho.dev/uploads/2019/07/25171207/javascript-652x300.jpg"><source media="(max-width: 1024px)" data-srcset="https://cdn.shubho.dev/shubho.dev/uploads/2019/07/25171207/javascript-864x300.jpg" srcset="https://cdn.shubho.dev/shubho.dev/uploads/2019/07/25171207/javascript-864x300.jpg"><source media="(max-width: 1199px)" data-srcset="https://cdn.shubho.dev/shubho.dev/uploads/2019/07/25171207/javascript-864x300.jpg" srcset="https://cdn.shubho.dev/shubho.dev/uploads/2019/07/25171207/javascript-864x300.jpg"><source media="(min-width: 1200px)" data-srcset="https://cdn.shubho.dev/shubho.dev/uploads/2019/07/25171207/javascript-864x300.jpg" srcset="https://cdn.shubho.dev/shubho.dev/uploads/2019/07/25171207/javascript-864x300.jpg"><img class="article-image lazyloaded" src="https://cdn.shubho.dev/shubho.dev/uploads/2019/07/25171207/javascript-425x255.jpg" data-src="https://cdn.shubho.dev/shubho.dev/uploads/2019/07/25171207/javascript-425x255.jpg" alt="JavaScript"></picture>
+                </div>
+                <div class="article-header-holder">
+                    <h1 class="article-title" id="page-main-content">How I created my GatsbyJS blog with WordPress as the backend</h1>
+                    <div class="metadata">
+                        <time class="datetime" datetime="2021-06-01">August 03, 2019</time>
+                        <ul aria-label="Categories and Tags" class="post-tags" role="list">
+                            <li><a href="/coding" title="Coding">Coding</a></li>
+                            <li><a href="/wordpress" title="WordPress">WordPress</a></li>
+                            <li><a href="/gatsby" title="Gatsby">Gatsby</a></li>
+                        </ul>
+                        <div class="read-time">4 min read</div>
+                    </div>
                 </div>
             </header>
-            <hr>
+            <div aria-hidden="true" class="separator"></div>
+            <hr class="single-post-top">
             <div class="article-body">
-                <p>Recently, I created my blog again after junking my writings on my other domains. My previous experience with Static Site Generators (SSG) was Hugo. This time I used Gatsby as my primary work deals with JavaScript, so it was a quick development process for me. For the backend, I used WordPress.</p>
-                <p>I plan to write a multi-post series as I have lots of notes on how I went about it. There are still some CSS polishing required. But overall, the site is ready. This part has loads of rambling, so feel free to skip it.</p>
-                <h2>Why do I use SSGs? - A history.</h2>
-                <p>I don’t know about you, but I love static sites. There are no headaches involved. Just plain HTML and CSS with a dash of JavaScript if required. That is how I learnt about developing websites. It was later that I realized maintaining them is a headache. A single change in the theme required changing and keeping track of all the files. It was 2005 when I discovered WordPress. I was going to start college during the summer, and I wanted to use something for my journal. I stuck with WordPress for the next 8-10 years. My main issue was it was slow even though my blog received barely any traffic. I used the recommended caching plugins, which improved it. But it was always an extra step.</p>
-                <p>Then I found Hugo. I moved my <a href="https://www.enjoyable.recipes" title="Enjoyable Recipes">Enjoyable Recipes</a> blog in 2017. It was a mess. I learned Go language, even though it was not required. The build was super fast, and I loved the speed with which the site loaded. However, there were multiple breaking changes in later versions. Shifting mentally from JavaScript development at work to Golang was too much for me at that time. So during the current redesign, I considered a JavaScript-based SSG. I studied Gatsby and Eleventy. Ultimately I decided on Gatsby because I was working on two React projects at that time so this was a natural fit.</p>
-                <h2>The Backend CMS</h2>
-                <p>I started with markdown files, moved to Contentful, finally settling on WordPress. I love writing in markdown. My Hugo blog is entirely in markdown as there is no other option. For the current site, I had the following requirements. These are solely my requirements. YMMV.</p>
-                <ol>
-                    <li><strong>Markdown Support</strong> - Contentful has native Markdown support. WordPress requires a plugin. Advantage Contentful.</li>
-                    <li><strong>Image Management</strong> - I didn’t want to check-in images to my repository. Also, I wanted automatic resizing wherever necessary. Netlify has support via Large Media. But I did not want to add LFS support. In case I decide to leave Netlify, I wanted the images resized with me. I considered Cloudinary too who have a generous free plan. But I did not want to add another provider. Contentful has automatic image management, which is fantastic. WordPress has Media Management and image resizing options via the plugin system. Advantage WordPress and Contentful.</li>
-                    <li><strong>Metadata for Images</strong> - Advanced Custom Fields (ACF) plugin for WordPress quickly add custom fields, and metadata support to posts, pages and images. Contentful only allows adding title, description and alt text. We need to create a separate content type for images and add extra fields. Advantage WordPress.</li>
-                    <li><strong>Categorization</strong> - Contentful supports categories and tags but in a round-about way. Everything needs to have a separate content type. WordPress has in-built support. Just type and press enter. Advantage WordPress.</li>
-                    <li><strong>Post Series Support</strong> - This is slightly difficult in Contentful and easier in WordPress. In Contentful, you can create references to other posts and then can link them in HTML. WordPress too does not support this natively. But it is easier (for me) using custom taxonomies. Tie between WordPress and Contentful.</li>
-                </ol>
-                <p>Considering the above requirements, WordPress was a better fit for me. However, I loved Contentful. Its interface is a beauty. Their free plan, their image support and no need to manage installations make it an excellent CMS. I also considered Ghost. But they have no image resize support yet, so it was out.</p>
-                <p>Finally, I write my posts in markdown. I manage these in a private repository so that I never lose them if my WordPress installation gets corrupted.</p>
-                <h2>Conclusion</h2>
-                <p>I know that was loads of rambling. In the next part, I will write about my WordPress setup and finally begin the finale - Gatsby integration. What do you use for your website?</p>
+                <div class="article-holder">
+                    <p>Async programming in JavaScript was scary for me. The only async paradigm I was comfortable with was jQuery's <code class="language-js">$<span class="token punctuation">.</span>ajax</code>. However, I went full vanilla JavaScript for the past 8 years, and when I started working with NodeJS, I had to learn Promises. I haven't dabbled much with third-party libraries like Bluebird. I have the most experience with native Promise.</p>
+                    <p>My main issue with <code class="language-js">Promise</code> (or asynchronous paradigm in general) used to be when I wanted to execute statements after the Promise statement began. It took some time to realise that once a Promise statement fires, there is no way to cancel it. Another issue was Promise chaining. This one was a kicker. My earlier functions with Promises always looked like friends of callback hell. After all these years and working on a couple of big projects, I can safely say I
+                        love Promises. Even though async/await is the new fad, I still love Promises.</p>
+                    <p>So here is how I use Promises to make my coding life simpler.</p>
+                    <h2>Create a Promise skeleton</h2>
+                    <p>Whenever I create a new function that returns a Promise, I create the skeleton first. Since the function cannot return anything other than Promise based values, I always wrap all the statements of the function within the Promise.</p>
+                    <div class="gatsby-highlight" data-language="js">
+                        <div class="syntax-lang-name">js</div>
+                        <pre class="language-js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">sample</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">Promise</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">resolve<span class="token punctuation">,</span> reject</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment">// The function body</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+                    </div>
+                    <p>The above sample function wraps its entire statement within the Promise, returning immediately. You can either <code class="language-js"><span class="token function">resolve</span><span class="token punctuation">(</span><span class="token punctuation">)</span></code> or <code class="language-js"><span class="token function">reject</span><span class="token punctuation">(</span><span class="token punctuation">)</span></code> the output you want from the body. This way, I never make a mistake of
+                        not returning a Promise. It also helps me in creating Promise chains. Whenever in a chain, I realise I need a new function, I create the skeleton name it appropriately and finish the main chain. Then I come back one by one and finish the individual functions.</p>
+                    <h2>Promise chains - Points to remember</h2>
+                    <p>Promise chaining is tricky. If we are not careful, we can have a new type of callback hell. An example:</p>
+                    <div class="gatsby-highlight" data-language="js">
+                        <div class="syntax-lang-name">js</div>
+                        <pre class="language-js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">promiseCallback</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">Promise</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">resolve<span class="token punctuation">,</span> reject</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+        <span class="token function">aNewFunction</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+            <span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">values</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+                <span class="token function">someOtherFunction</span><span class="token punctuation">(</span>values<span class="token punctuation">)</span>
+                    <span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">someOtherValue</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+                        <span class="token comment">// Do something</span>
+                        <span class="token function">resolve</span><span class="token punctuation">(</span>someOtherValue<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+                    <span class="token punctuation">.</span><span class="token function">catch</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">err1</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+                        <span class="token comment">// Error in inner function</span>
+                        <span class="token function">reject</span><span class="token punctuation">(</span>err1<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span><span class="token punctuation">)</span>
+            <span class="token punctuation">.</span><span class="token function">catch</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">err</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+                <span class="token comment">// Error in outer function</span>
+                <span class="token function">reject</span><span class="token punctuation">(</span>err<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+                    </div>
+                    <p>In the above sample <code class="language-js"><span class="token function">aFunction</span><span class="token punctuation">(</span><span class="token punctuation">)</span></code> and <code class="language-js"><span class="token function">someOtherFunction</span><span class="token punctuation">(</span><span class="token punctuation">)</span></code> are two functions returning Promises. If you see carefully, the sequence looks like a callback hell. The inner then and catch the chain, and outer
+                        ones are independent. We cannot handle errors in a common catch block, and we need to be careful that the inner functions are always the last line within their outer <code class="language-js"><span class="token function">then</span><span class="token punctuation">(</span><span class="token punctuation">)</span></code> otherwise we can't control the execution flow.</p>
+                    <p>A better way with chains:</p>
+                    <div class="gatsby-highlight" data-language="js">
+                        <div class="syntax-lang-name">js</div>
+                        <pre class="language-js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">promiseCallback</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">Promise</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">resolve<span class="token punctuation">,</span> reject</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+        <span class="token function">aNewFunction</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+            <span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">values</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+                <span class="token keyword">return</span> <span class="token function">someOtherFunction</span><span class="token punctuation">(</span>values<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span><span class="token punctuation">)</span>
+            <span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">someOtherValue</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+                <span class="token comment">// Do something</span>
+                <span class="token function">resolve</span><span class="token punctuation">(</span>someOtherValue<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span><span class="token punctuation">)</span>
+            <span class="token punctuation">.</span><span class="token function">catch</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">err</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+                <span class="token comment">// Error in outer function</span>
+                <span class="token function">reject</span><span class="token punctuation">(</span>err<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+                    </div>
+                    <p>Returns within the <code class="language-text">then</code> chain can only have three types:</p>
+                    <ol>
+                        <li><strong>Promise</strong> - A <code class="language-text">then</code> function in a chain can return a Promise. It's result is passed to the next <code class="language-text">then</code>.</li>
+                        <li><strong>Scalar Value</strong> - A <code class="language-text">then</code> function in a chain can return a value like a String or a Number. This value is passed to the next <code class="language-text">then</code> as is and the chain can continue.</li>
+                        <li><strong>Throw</strong> - A <code class="language-text">then</code> function can <code class="language-text">throw</code> an error, which moves the execution to the catch block.</li>
+                    </ol>
+                    <p>As long as all your returns within a <code class="language-text">then</code> follow the above three types, you shouldn't have issues following your Promise chain.</p>
+                    <p><strong>Note</strong><br>
+                        Remember to always <code class="language-js"><span class="token function">resolve</span><span class="token punctuation">(</span><span class="token punctuation">)</span></code> or <code class="language-js"><span class="token function">reject</span><span class="token punctuation">(</span><span class="token punctuation">)</span></code> in the last <code class="language-text">then</code> or <code class="language-text">catch</code> of the chain.</p>
+                    <h2>When to create a new Promise function</h2>
+                    <p>Within a Promise chain, if there are multiple if-else conditions, and each condition can lead to different Promise results, it is an excellent time to create a new function that returns a Promise. This way, the Promise chain returns a single statement calling the new function.</p>
+                    <h2>Handling a scalar value or a Promise function in one step</h2>
+                    <p>Assume we have a function which gets the marks attained by a student using his roll number. However, the function either takes a roll number as an input or the name of the student. The marks can be attained from the DB only using the roll number. Here is some pseudo-code.</p>
+                    <div class="gatsby-highlight" data-language="js">
+                        <div class="syntax-lang-name">js</div>
+                        <pre class="language-js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">getMarks</span><span class="token punctuation">(</span><span class="token parameter">obj</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">let</span> rollNumberPromise <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token string">'rollNumber'</span> <span class="token keyword">in</span> obj<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        rollNumberPromise <span class="token operator">=</span> Promise<span class="token punctuation">.</span><span class="token function">resolve</span><span class="token punctuation">(</span>obj<span class="token punctuation">.</span>rollNumber<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token string">'studentName'</span> <span class="token keyword">in</span> obj<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        rollNumberPromise <span class="token operator">=</span> <span class="token function">getRollNumberFromName</span><span class="token punctuation">(</span>obj<span class="token punctuation">.</span>studentName<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>rollNumberPromise<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token function">reject</span><span class="token punctuation">(</span><span class="token string">'Nothing worked'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    rollNumberPromise
+        <span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">rollNumber</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+            <span class="token keyword">return</span> <span class="token function">get_marks_from_db</span><span class="token punctuation">(</span>rollNumber<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span><span class="token punctuation">)</span>
+        <span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">marks</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+            <span class="token function">resolve</span><span class="token punctuation">(</span>marks<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span><span class="token punctuation">)</span>
+        <span class="token punctuation">.</span><span class="token function">catch</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">err</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+            <span class="token function">reject</span><span class="token punctuation">(</span>err<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">function</span> <span class="token function">getRollNumberFromName</span><span class="token punctuation">(</span><span class="token parameter">studentName</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">Promise</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">resolve<span class="token punctuation">,</span> reject</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token function">fn_to_get_roll_number_from_db</span><span class="token punctuation">(</span>studentName<span class="token punctuation">)</span>
+            <span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">rollNumber</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+                <span class="token function">resolve</span><span class="token punctuation">(</span>rollNumber<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span><span class="token punctuation">)</span>
+            <span class="token punctuation">.</span><span class="token function">catch</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">err</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+                <span class="token function">reject</span><span class="token punctuation">(</span>err<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">function</span> <span class="token function">fn_to_get_roll_number_from_db</span><span class="token punctuation">(</span><span class="token parameter">studentName</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">Promise</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">resolve<span class="token punctuation">,</span> reject</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment">// some code</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">function</span> <span class="token function">get_marks_from_db</span><span class="token punctuation">(</span><span class="token parameter">rollNumber</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">Promise</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">resolve<span class="token punctuation">,</span> reject</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment">// some code</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+                    </div>
+                    <p><code class="language-js"><span class="token function">getMarks</span><span class="token punctuation">(</span>obj<span class="token punctuation">)</span></code> takes an Object as an input. We create a local variable <code class="language-text">rollNumberPromise</code>. If the rollNumber is already present, we save the value in the variable using <code class="language-js">Promise<span class="token punctuation">.</span><span class="token function">resolve</span><span class="token punctuation">(</span><span
+                            class="token punctuation">)</span></code>. This creates a Promise which resolves when called with the value. If student’s name is sent, then we save the call to the function <code class="language-js"><span class="token function">getRollNumberFromName</span><span class="token punctuation">(</span>studentName<span class="token punctuation">)</span></code> to the local variable. Calling <code class="language-js">rollNumberPromise<span class="token punctuation">.</span><span
+                            class="token function">then</span><span class="token punctuation">(</span><span class="token punctuation">)</span></code> returns a rollNumber whether it is received from the DB or sent directly as input to the function. Using it this way ensures that <code class="language-js"><span class="token function">getMarks</span><span class="token punctuation">(</span><span class="token punctuation">)</span></code> has a single Promise chain, rather than an if-else condition based on whether the
+                        input passed was a number or a name.</p>
+                    <h2>Invoke a Promise at the end</h2>
+                    <p>As mentioned before, once a Promise, once invoked, cannot be cancelled. Any statements which do not depend on the Promise output and which can be carried out independently without an async call should complete before you start a Promise chain in your function. Once a Promise chain begins, any subsequent steps must be within the <code class="language-text">then</code> chain. The only exception to this is when you do not care of the Promise value, and you want the Promise to execute in the
+                        background while your primary function keeps running.</p>
+                    <h2>Conclusion</h2>
+                    <p>Promises are difficult. However, with practice and following some rules, it makes working with them a charm. I strictly follow the above rules, and I never go wrong with Promises these days. Find out what you are comfortable with and create your own rules.</p>
+                </div>
             </div>
             <hr>
             <footer class="article-footer">
-                <nav role="navigation" aria-label="Pagination links" class="pagination">
-                    <a class="previous" href="/prev" data-direction="backwards"><svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true" focusable="false">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
-                    </svg> <span>Previous post</span></a>
-                    <a class="next" href="/next" data-direction="forwards"><span>Next post</span> <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true" focusable="false">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-                    </svg></a>
+                <nav aria-label="Pagination links" class="pagination" role="navigation">
+                    <a class="previous" data-direction="backwards" href="/prev">
+                        <svg aria-hidden="true" class="h-4 w-4" fill="none" focusable="false" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M15 19l-7-7 7-7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+                        </svg>
+                        <span>Previous post</span></a>
+                    <a class="next" data-direction="forwards" href="/next"><span>Next post</span>
+                        <svg aria-hidden="true" class="h-4 w-4" fill="none" focusable="false" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M9 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+                        </svg>
+                    </a>
                 </nav>
             </footer>
         </article>
-
-
     </main>
 
-    <footer class="site-footer mb-8" role="contentinfo">
-        <div class="bg-site-body-bgcolor max-w-1371 h-7.1 mx-auto mt-0 text-center text-site-text-color text-0.9">&copy; Copyright Shubhojyoti Bhattacharya 2019 - 2021.<br><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="p-0 !text-site-link-color hover:underline active:underline">Attribution-NonCommercial-ShareAlike</a></div>
+    <footer class="site-footer" role="contentinfo">
+        <div class="footer-holder">&copy; Copyright Shubhojyoti Bhattacharya 2019 - 2021.<br><a class="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">Attribution-NonCommercial-ShareAlike</a></div>
     </footer>
 </div>
 
-<aside class="off-menu root-hidden smmax:flex sm-js-only sm-aria-show">
-    <ul class="off-menu-list" role="list">
-        <li class="text-center flex items-center justify-between pt-8 mb-4 w-full h-header">
-            <div class="theme-switcher-off-menu-holder"></div>
-            <div class="off-menu-close pr-social">
-                <button class="bg-site-home-intro-social-hover text-site-body-bgcolor p-2 rounded" aria-label="Close Menu">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-                    </svg>
-                </button>
-            </div>
-        </li>
-        <li class="off-menu-list-items mt-4"><a href="/blog/" class="off-menu-list-items-links block w-full !text-site-body-bgcolor hover:bg-site-home-intro-social-hover">Blog</a></li>
-        <li class="off-menu-list-items"><a href="/about/" class="off-menu-list-item-links block w-full !text-site-body-bgcolor hover:bg-site-home-intro-social-hover">About</a></li>
-    </ul>
-</aside>
-
-<div class="mask root-hidden" aria-hidden="true"></div>
-<link rel="stylesheet" href="/css/fonts.css" type="text/css">
-<script src="/js/scripts.js" defer></script>
+<div aria-hidden="true" class="mask root-hidden"></div>
+<link href="/css/fonts.css" rel="stylesheet" type="text/css">
+<script defer src="/js/scripts.js"></script>
 </body>
 </html>

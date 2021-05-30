@@ -13,202 +13,178 @@
 <body>
 <div class="page-container">
     <header role="banner">
-        <div class="header-container justify-between">
+        <div class="header-container">
             <div class="logo-container">
-                <a href="index.html" title="Home Page">
-                    <img src="/images/lightlogo.svg" alt="Shubho.dev logo" width="163" height="48" class="site-logo">
+                <a href="#page-main-content" id="skip-content-link">Jump to Main Content</a>
+                <a href="index.html" class="logo" title="Home Page" aria-label="Go to Home page">
+                    <img src="/images/lightlogo.svg" alt="Shubho.dev logo" width="163" height="48" class="site-logo" aria-hidden="true">
                 </a>
             </div>
-            <nav class="top-nav mr-12 max-sm:w-full smmax:hidden sm-no-js" aria-label="Primary Navigation" role="navigation">
-                <ul class="list-none text-right max-sm:text-left max-sm:mt-4 max-sm:mb-4" role="list">
-                    <li class="inline-block uppercase"><a href="/blog/" class="primary-nav-link" title="Blog">Blog</a></li>
-                    <li class="inline-block uppercase ml-2.5"><a href="/about/" class="primary-nav-link" title="About me">About</a></li>
-                </ul>
-            </nav>
-            <div class="theme-toggler-holder smmax:hidden js-only">
-                <div class="theme-toggler relative">
-                    <span id="theme-switch-label" class="absolute right-offscreen">Choose a color theme</span>
-                    <button id="theme-switcher-btn" class="theme-switcher" role="button" aria-haspopup="listbox" aria-expanded="false" aria-labelledby="theme-switch-label theme-switcher-btn" aria-label="Using system default theme">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 inline-block" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
-                        </svg>
-                        <span class="inline-block ml-1">System Default</span>
-                    </button>
-                    <ul class="theme-switcher-options" tabindex="-1" aria-labelledby="theme-switch-label" role="listbox">
-                        <li id="theme-light-option" tabindex="-1" class="theme-switcher-list-item" role="option" data-option="light">
-                            <div class="theme-switcher-link">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 inline-block" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/>
-                                </svg>
-                                <span class="inline-block ml-1">Light Theme</span>
-                            </div>
-                        </li>
-                        <li id="theme-dark-option" tabindex="-1" class="theme-switcher-list-item" role="option" data-option="dark">
-                            <div class="theme-switcher-link">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 inline-block" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/>
-                                </svg>
-                                <span class="inline-block ml-1">Dark Theme</span>
-                            </div>
-                        </li>
-                        <li id="theme-system-option" tabindex="-1" class="theme-switcher-list-item !border-b border-site-body-bgcolor" aria-selected="true" role="option" data-option="system">
-                            <div class="theme-switcher-link">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 inline-block" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
-                                </svg>
-                                <span class="inline-block ml-1">System Default</span>
-                            </div>
-                        </li>
+            <div class="nav-container">
+                <nav class="top-nav max-sm:w-full" aria-label="Primary Navigation" role="navigation">
+                    <ul role="list">
+                        <li><a href="blog.html" class="primary-nav-link" title="Blog">Blog</a></li>
+                        <li><a href="/about/" class="primary-nav-link" title="About me">About</a></li>
                     </ul>
+                </nav>
+                <div class="theme-toggler-holder js-only">
+                    <div class="theme-toggler relative">
+                        <span id="theme-switch-label" class="absolute right-offscreen">Choose a color theme</span>
+                        <button id="theme-switcher-btn" class="theme-switcher" role="button" aria-haspopup="listbox" aria-expanded="false" aria-labelledby="theme-switch-label theme-switcher-btn" aria-label="Using system default theme">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 inline-block" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="false" focusable="false">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                            </svg>
+                            <span class="inline-block ml-1">System Default</span>
+                        </button>
+                        <ul class="theme-switcher-options" tabindex="-1" aria-labelledby="theme-switch-label" role="listbox">
+                            <li id="theme-light-option" tabindex="-1" class="theme-switcher-list-item" role="option" data-option="light">
+                                <div class="theme-switcher-link">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 inline-block" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="false" focusable="false">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/>
+                                    </svg>
+                                    <span class="inline-block ml-1">Light Theme</span>
+                                </div>
+                            </li>
+                            <li id="theme-dark-option" tabindex="-1" class="theme-switcher-list-item" role="option" data-option="dark">
+                                <div class="theme-switcher-link">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 inline-block" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="false" focusable="false">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/>
+                                    </svg>
+                                    <span class="inline-block ml-1">Dark Theme</span>
+                                </div>
+                            </li>
+                            <li id="theme-system-option" tabindex="-1" class="theme-switcher-list-item !border-b border-site-body-bgcolor" aria-selected="true" role="option" data-option="system">
+                                <div class="theme-switcher-link">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 inline-block" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="false" focusable="false">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                                    </svg>
+                                    <span class="inline-block ml-1">System Default</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
-            </div>
-            <div class="off-menu-show sm:hidden sm-js-only sm-aria-show pr-4">
-                <button class="bg-site-home-intro-social-hover text-site-body-bgcolor p-2 rounded" aria-label="Menu">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-                    </svg>
-                </button>
             </div>
         </div>
     </header>
 
-    <main class="blog-list" role="main">
-        <h1 class="invisible h-0 w-0">Shubho.Dev - Online home of Shubhojyoti Bhattacharya</h1>
+    <main class="list-page">
+        <div class="list-page-holder">
+            <section aria-labelledby="page-main-content" class="blog-article-list">
+                <header class="article-list-header">
+                    <h1 id="page-main-content">Latest Posts</h1>
+                </header>
+                <hr>
+                <div class="articles">
+                    <article class="list-page-article">
+                        <header class="mb-2"><h2 class="post-heading"><a href="single.html" rel="bookmark" class="!p-0">How I created my GatsbyJS blog with WordPress as the backend – Part 2</a></h2></header>
+                        <aside class="meta flex items-center">
+                            <time class="text-sm" datetime="20210525">25th May 2021</time>
+                            <a class="blog-list-bookmark" href="/coding/">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><line x1="4" y1="9" x2="20" y2="9"/><line x1="4" y1="15" x2="20" y2="15"/><line x1="10" y1="3" x2="8" y2="21"/><line x1="16" y1="3" x2="14" y2="21"/></svg>
+                                <span class="block ml-1">Coding</span>
+                            </a>
+                        </aside>
+                    </article>
 
-        <section aria-labelledby="page-main-content" class="blog-article-list">
-            <header class="article-list-header">
-                <h2 id="page-main-content" class="text-3xl">Blog</h2>
-            </header>
-            <hr>
-            <div class="articles">
-                <article class="article mt-4">
-                    <header class="mb-2"><h3 class="text-2xl font-semibold"><a href="single.html" rel="bookmark" class="!p-0">How I created my GatsbyJS blog with WordPress as the backend – Part 2</a></h3></header>
-                    <aside class="meta flex items-center">
-                        <time class="text-sm" datetime="20210525">25th May 2021</time>
-                        <a class="blog-list-bookmark" href="/coding/">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><line x1="4" y1="9" x2="20" y2="9"/><line x1="4" y1="15" x2="20" y2="15"/><line x1="10" y1="3" x2="8" y2="21"/><line x1="16" y1="3" x2="14" y2="21"/></svg>
-                            <span class="block ml-1">Coding</span>
-                        </a>
-                    </aside>
-                </article>
+                    <article class="list-page-article">
+                        <header class="mb-2"><h2 class="post-heading"><a href="/coding/how-i-created-my-gatsbyjs-blog-with-wordpress-as-the-backend-part-2/" rel="bookmark" class="!p-0">How I created my GatsbyJS blog with WordPress as the backend</a></h2></header>
+                        <aside class="meta flex items-center">
+                            <time class="text-sm" datetime="20210525">3rd August 2019</time>
+                            <a class="blog-list-bookmark" href="/coding/" rel="bookmark">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><line x1="4" y1="9" x2="20" y2="9"/><line x1="4" y1="15" x2="20" y2="15"/><line x1="10" y1="3" x2="8" y2="21"/><line x1="16" y1="3" x2="14" y2="21"/></svg>
+                                <span class="block ml-1">Coding</span>
+                            </a>
+                        </aside>
+                    </article>
 
-                <article class="article mt-4">
-                    <header class="mb-2"><h3 class="text-2xl font-semibold"><a href="/coding/how-i-created-my-gatsbyjs-blog-with-wordpress-as-the-backend-part-2/" rel="bookmark" class="!p-0">How I created my GatsbyJS blog with WordPress as the backend</a></h3></header>
-                    <aside class="meta flex items-center">
-                        <time class="text-sm" datetime="20210525">3rd August 2019</time>
-                        <a class="blog-list-bookmark" href="/coding/" rel="bookmark">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><line x1="4" y1="9" x2="20" y2="9"/><line x1="4" y1="15" x2="20" y2="15"/><line x1="10" y1="3" x2="8" y2="21"/><line x1="16" y1="3" x2="14" y2="21"/></svg>
-                            <span class="block ml-1">Coding</span>
-                        </a>
-                    </aside>
-                </article>
+                    <article class="list-page-article">
+                        <header class="mb-2"><h2 class="post-heading"><a href="/javascript/how-i-use-javascript-promises/" rel="bookmark" class="!p-0">How I use JavaScript Promises?</a></h2></header>
+                        <aside class="meta flex items-center">
+                            <time class="text-sm" datetime="20210525">25th July 2019</time>
+                            <a class="blog-list-bookmark" href="/coding/" rel="bookmark">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><line x1="4" y1="9" x2="20" y2="9"/><line x1="4" y1="15" x2="20" y2="15"/><line x1="10" y1="3" x2="8" y2="21"/><line x1="16" y1="3" x2="14" y2="21"/></svg>
+                                <span class="block ml-1">JavaScript</span>
+                            </a>
+                        </aside>
+                    </article>
 
-                <article class="article mt-4">
-                    <header class="mb-2"><h3 class="text-2xl font-semibold"><a href="/javascript/how-i-use-javascript-promises/" rel="bookmark" class="!p-0">How I use JavaScript Promises?</a></h3></header>
-                    <aside class="meta flex items-center">
-                        <time class="text-sm" datetime="20210525">25th July 2019</time>
-                        <a class="blog-list-bookmark" href="/coding/" rel="bookmark">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><line x1="4" y1="9" x2="20" y2="9"/><line x1="4" y1="15" x2="20" y2="15"/><line x1="10" y1="3" x2="8" y2="21"/><line x1="16" y1="3" x2="14" y2="21"/></svg>
-                            <span class="block ml-1">JavaScript</span>
-                        </a>
-                    </aside>
-                </article>
+                    <article class="list-page-article">
+                        <header class="mb-2"><h2 class="post-heading"><a href="/javascript/how-i-use-javascript-promises/" rel="bookmark" class="!p-0">WordPress HTML to Markdown for Gatsby</a></h2></header>
+                        <aside class="meta flex items-center">
+                            <time class="text-sm" datetime="20210525">22nd July 2019</time>
+                            <a class="blog-list-bookmark" href="/coding/" rel="bookmark">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><line x1="4" y1="9" x2="20" y2="9"/><line x1="4" y1="15" x2="20" y2="15"/><line x1="10" y1="3" x2="8" y2="21"/><line x1="16" y1="3" x2="14" y2="21"/></svg>
+                                <span class="block ml-1">WordPress</span>
+                            </a>
+                        </aside>
+                    </article>
 
-                <article class="article mt-4">
-                    <header class="mb-2"><h3 class="text-2xl font-semibold"><a href="/javascript/how-i-use-javascript-promises/" rel="bookmark" class="!p-0">WordPress HTML to Markdown for Gatsby</a></h3></header>
-                    <aside class="meta flex items-center">
-                        <time class="text-sm" datetime="20210525">22nd July 2019</time>
-                        <a class="blog-list-bookmark" href="/coding/" rel="bookmark">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><line x1="4" y1="9" x2="20" y2="9"/><line x1="4" y1="15" x2="20" y2="15"/><line x1="10" y1="3" x2="8" y2="21"/><line x1="16" y1="3" x2="14" y2="21"/></svg>
-                            <span class="block ml-1">WordPress</span>
-                        </a>
-                    </aside>
-                </article>
+                    <article class="list-page-article">
+                        <header class="mb-2"><h2 class="post-heading"><a href="/javascript/how-i-use-javascript-promises/" rel="bookmark" class="!p-0">OSPF Packet Formats</a></h2></header>
+                        <aside class="meta flex items-center">
+                            <time class="text-sm" datetime="20210525">18th July 2019</time>
+                            <a class="blog-list-bookmark" href="/coding/" rel="bookmark">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><line x1="4" y1="9" x2="20" y2="9"/><line x1="4" y1="15" x2="20" y2="15"/><line x1="10" y1="3" x2="8" y2="21"/><line x1="16" y1="3" x2="14" y2="21"/></svg>
+                                <span class="block ml-1">Networking</span>
+                            </a>
+                        </aside>
+                    </article>
 
-                <article class="article mt-4">
-                    <header class="mb-2"><h3 class="text-2xl font-semibold"><a href="/javascript/how-i-use-javascript-promises/" rel="bookmark" class="!p-0">OSPF Packet Formats</a></h3></header>
-                    <aside class="meta flex items-center">
-                        <time class="text-sm" datetime="20210525">18th July 2019</time>
-                        <a class="blog-list-bookmark" href="/coding/" rel="bookmark">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><line x1="4" y1="9" x2="20" y2="9"/><line x1="4" y1="15" x2="20" y2="15"/><line x1="10" y1="3" x2="8" y2="21"/><line x1="16" y1="3" x2="14" y2="21"/></svg>
-                            <span class="block ml-1">Networking</span>
-                        </a>
-                    </aside>
-                </article>
-
-                <article class="article mt-4">
-                    <header class="mb-2"><h3 class="text-2xl font-semibold"><a href="/javascript/how-i-use-javascript-promises/" rel="bookmark" class="!p-0">How I use JavaScript Promises?</a></h3></header>
-                    <aside class="meta flex items-center">
-                        <time class="text-sm" datetime="20210525">25th July 2019</time>
-                        <a class="blog-list-bookmark" href="/coding/" rel="bookmark">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><line x1="4" y1="9" x2="20" y2="9"/><line x1="4" y1="15" x2="20" y2="15"/><line x1="10" y1="3" x2="8" y2="21"/><line x1="16" y1="3" x2="14" y2="21"/></svg>
-                            <span class="block ml-1">JavaScript</span>
-                        </a>
-                    </aside>
-                </article>
-
-            </div>
-            <hr>
-            <footer class="article-footer">
-                <nav role="navigation" aria-label="Pagination links" class="pagination">
-                    <a class="previous" href="/prev" data-direction="backwards"><svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true" focusable="false">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
-                    </svg> <span>Newer posts</span></a>
-                    <a class="next" href="/next" data-direction="forwards"><span>Older posts</span> <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true" focusable="false">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-                    </svg></a>
-                </nav>
-            </footer>
-
-        </section>
-
-        <nav class="side-nav" role="navigation" aria-label="Secondary Navigation">
-            <section class="side-nav-section category-nav" aria-labelledby="category-nav">
-                <header><h2 id="category-nav">Categories</h2></header>
-                <ul role="list">
-                    <li><a href="/coding/" title="Coding category" aria-label="Coding - contains 4 posts">Coding</a> <span class="badge" aria-hidden="true">4</span></li>
-                    <li><a href="/coding/" title="Coding category" aria-label="Coding - contains 4 posts">Devops</a> <span class="badge" aria-hidden="true">10</span></li>
-                    <li><a href="/coding/" title="Coding category" aria-label="Coding - contains 4 posts">Networking</a> <span class="badge" aria-hidden="true">7</span></li>
-                </ul>
+                    <article class="list-page-article">
+                        <header class="mb-2"><h2 class="post-heading"><a href="/javascript/how-i-use-javascript-promises/" rel="bookmark" class="!p-0">How I use JavaScript Promises?</a></h2></header>
+                        <aside class="meta flex items-center">
+                            <time class="text-sm" datetime="20210525">25th July 2019</time>
+                            <a class="blog-list-bookmark" href="/coding/" rel="bookmark">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><line x1="4" y1="9" x2="20" y2="9"/><line x1="4" y1="15" x2="20" y2="15"/><line x1="10" y1="3" x2="8" y2="21"/><line x1="16" y1="3" x2="14" y2="21"/></svg>
+                                <span class="block ml-1">JavaScript</span>
+                            </a>
+                        </aside>
+                    </article>
+                </div>
+                <hr>
+                <footer class="article-footer">
+                    <nav role="navigation" aria-label="Pagination links" class="pagination">
+                        <a class="previous" href="/prev" data-direction="backwards"><svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true" focusable="false">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+                        </svg> <span>Newer posts</span></a>
+                        <a class="next" href="/next" data-direction="forwards"><span>Older posts</span> <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true" focusable="false">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                        </svg></a>
+                    </nav>
+                </footer>
             </section>
-            <section class="side-nav-section tags-nav" aria-labelledby="tags-nav">
-                <header><h2 id="tags-nav">Tags</h2></header>
-                <ul role="list">
-                    <li><a href="/dropbox/" title="Dropbox tag">Dropbox</a></li>
-                    <li><a href="/dropbox/" title="Dropbox tag">Elasticsearch</a></li>
-                    <li><a href="/dropbox/" title="Dropbox tag">Gatsby</a></li>
-                    <li><a href="/dropbox/" title="Dropbox tag">JavaScript</a></li>
-                    <li><a href="/dropbox/" title="Dropbox tag">NextCloud</a></li>
-                    <li><a href="/dropbox/" title="Dropbox tag">OSPF</a></li>
-                    <li><a href="/dropbox/" title="Dropbox tag">RIP</a></li>
-                    <li><a href="/dropbox/" title="Dropbox tag">WordPress</a></li>
-                </ul>
-            </section>
-        </nav>
 
+            <nav class="side-nav" role="navigation" aria-label="Secondary Navigation">
+                <section class="side-nav-section category-nav" aria-labelledby="category-nav">
+                    <header><h2 id="category-nav">Categories</h2></header>
+                    <ul role="list">
+                        <li><a href="/coding/" title="Coding category" aria-label="Coding - contains 4 posts">Coding</a> <span class="badge" aria-hidden="true">4</span></li>
+                        <li><a href="/coding/" title="Coding category" aria-label="Coding - contains 4 posts">Devops</a> <span class="badge" aria-hidden="true">10</span></li>
+                        <li><a href="/coding/" title="Coding category" aria-label="Coding - contains 4 posts">Networking</a> <span class="badge" aria-hidden="true">7</span></li>
+                    </ul>
+                </section>
+                <section class="side-nav-section tags-nav" aria-labelledby="tags-nav">
+                    <header><h2 id="tags-nav">Tags</h2></header>
+                    <ul role="list">
+                        <li><a href="/dropbox/" title="Dropbox tag">Dropbox</a></li>
+                        <li><a href="/dropbox/" title="Dropbox tag">Elasticsearch</a></li>
+                        <li><a href="/dropbox/" title="Dropbox tag">Gatsby</a></li>
+                        <li><a href="/dropbox/" title="Dropbox tag">JavaScript</a></li>
+                        <li><a href="/dropbox/" title="Dropbox tag">NextCloud</a></li>
+                        <li><a href="/dropbox/" title="Dropbox tag">OSPF</a></li>
+                        <li><a href="/dropbox/" title="Dropbox tag">RIP</a></li>
+                        <li><a href="/dropbox/" title="Dropbox tag">WordPress</a></li>
+                    </ul>
+                </section>
+            </nav>
+        </div>
     </main>
 
-    <footer class="site-footer mb-8" role="contentinfo">
-        <div class="bg-site-body-bgcolor max-w-1371 h-7.1 mx-auto mt-0 text-center text-site-text-color text-0.9">&copy; Copyright Shubhojyoti Bhattacharya 2019 - 2021.<br><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="p-0 !text-site-link-color hover:underline active:underline">Attribution-NonCommercial-ShareAlike</a></div>
+    <footer class="site-footer" role="contentinfo">
+        <div class="footer-holder">&copy; Copyright Shubhojyoti Bhattacharya 2019 - 2021.<br><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="license">Attribution-NonCommercial-ShareAlike</a></div>
     </footer>
 </div>
-
-<aside class="off-menu root-hidden smmax:flex sm-js-only sm-aria-show">
-    <ul class="off-menu-list" role="list">
-        <li class="text-center flex items-center justify-between pt-8 mb-4 w-full h-header">
-            <div class="theme-switcher-off-menu-holder"></div>
-            <div class="off-menu-close pr-social">
-                <button class="bg-site-home-intro-social-hover text-site-body-bgcolor p-2 rounded" aria-label="Close Menu">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-                    </svg>
-                </button>
-            </div>
-        </li>
-        <li class="off-menu-list-items mt-4"><a href="/blog/" class="off-menu-list-items-links block w-full !text-site-body-bgcolor hover:bg-site-home-intro-social-hover">Blog</a></li>
-        <li class="off-menu-list-items"><a href="/about/" class="off-menu-list-item-links block w-full !text-site-body-bgcolor hover:bg-site-home-intro-social-hover">About</a></li>
-    </ul>
-</aside>
 
 <div class="mask root-hidden"></div>
 <link rel="stylesheet" href="/css/fonts.css" type="text/css">

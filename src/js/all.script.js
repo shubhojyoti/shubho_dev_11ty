@@ -31,43 +31,6 @@ function documentClickEvt() {
     });
 }
 
-function copyThemeSwitcherToOffMenu() {
-    const currWidth = window.innerWidth;
-    const themeTogglerHolder = document.querySelector('.theme-toggler-holder');
-    const themeToggler = document.querySelector('.theme-toggler');
-    const offMenuItem = document.querySelector('.theme-switcher-off-menu-holder');
-    if (themeTogglerHolder && themeToggler && offMenuItem) {
-        const isInsideMainSpace = themeToggler.parentElement.classList.contains('theme-toggler-holder');
-        if (isInsideMainSpace) {
-            if (currWidth <= 640) {
-                offMenuItem.appendChild(themeToggler);
-            }
-        } else {
-            if (currWidth > 640) {
-                themeTogglerHolder.appendChild(themeToggler);
-            }
-        }
-    }
-}
-
-function closeOffMenu() {
-    const obj = document.querySelector('.off-menu-close > button');
-    obj.addEventListener('click', () => {
-        document.querySelector('.off-menu').classList.add('root-hidden');
-        document.querySelector('.mask').classList.add('root-hidden');
-        document.querySelector('.mask').classList.remove('root-block');
-    });
-}
-
-function showOffMenu() {
-    const obj = document.querySelector('.off-menu-show > button');
-    obj.addEventListener('click', () => {
-        document.querySelector('.off-menu').classList.remove('root-hidden');
-        document.querySelector('.mask').classList.remove('root-hidden');
-        document.querySelector('.mask').classList.add('root-block');
-    });
-}
-
 function getAllChildren(obj) {
     if (obj.children.length === 0) {
         return [];
@@ -101,16 +64,26 @@ function removeAriaHiddenOnSmallScreen() {
     });
 }
 
+function jumpBtnKeyboardEvtHandler() {
+    const obj = document.querySelector('#skip-content-link');
+    if (obj) {
+        obj.addEventListener('keydown', (evt) => {
+            if (evt.code) {
+                if (evt.code.toString().toLowerCase() === 'escape') {
+                    obj.blur();
+                }
+            }
+        });
+    }
+}
+
 window.addEventListener('DOMContentLoaded', () => {
     theme.onloadFns();
     documentClickEvt();
-    copyThemeSwitcherToOffMenu();
-    closeOffMenu();
-    showOffMenu();
     removeAriaHiddenOnSmallScreen();
+    jumpBtnKeyboardEvtHandler();
 });
 
 window.addEventListener('resize', () => {
-    copyThemeSwitcherToOffMenu();
     removeAriaHiddenOnSmallScreen();
 });

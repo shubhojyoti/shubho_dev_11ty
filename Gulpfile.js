@@ -108,7 +108,7 @@ gulp.task('build:js', () => {
         .pipe(gulp.dest(paths.dist.js))
         .pipe(process.env.NODE_ENV && process.env.NODE_ENV === 'production' ?
             rev.manifest(`${paths.dist.html}/manifest.json`, { merge: true }) : noop())
-        .pipe(gulp.dest('.'))
+        .pipe(process.env.NODE_ENV && process.env.NODE_ENV === 'production' ? gulp.dest('.') : noop())
         .pipe(browserSync.stream());
 });
 gulp.task('watch:js', () => {
@@ -132,7 +132,7 @@ gulp.task('build:css', () => {
         .pipe(gulp.dest(`${paths.dist.css}`))
         .pipe(process.env.NODE_ENV && process.env.NODE_ENV === 'production' ?
             rev.manifest(`${paths.dist.html}/manifest.json`, { merge: true }) : noop())
-        .pipe(gulp.dest('.'))
+        .pipe(process.env.NODE_ENV && process.env.NODE_ENV === 'production' ? gulp.dest('.') : noop())
         .pipe(browserSync.stream());
 });
 gulp.task('watch:css', () => {

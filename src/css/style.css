@@ -1,16 +1,24 @@
 @import "./partials/variables.pcss";
 
 @import "tailwindcss/base.css";
-@import "./partials/layout.pcss";
+@import "./partials/core.pcss";
+@import "./partials/header.pcss";
+@import "./partials/pagination.pcss";
+@import "./partials/footer.pcss";
 
 @import "tailwindcss/components.css";
 @import "./partials/theme-toggler.pcss";
 @import "./partials/off-menu.pcss";
+@import "./partials/home.pcss";
 @import "./partials/home-social.pcss";
-@import "./partials/blog-list.pcss";
-@import "./partials/blog-post.pcss";
+@import "./partials/list-page.pcss";
+@import "./partials/single-post.pcss";
 
 @import "tailwindcss/utilities.css";
+
+@import "./prism/prism.dark.pcss";
+@import "./prism/prism.light.pcss";
+@import "./prism/prism-specific.pcss";
 
 .root-hidden {
     display: none !important;
