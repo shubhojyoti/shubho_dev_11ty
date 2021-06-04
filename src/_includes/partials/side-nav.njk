@@ -1,0 +1,22 @@
+<nav class="side-nav" role="navigation" aria-label="Secondary Navigation">
+    {% if taxonomies.categories | length %}
+    <section class="side-nav-section category-nav" aria-labelledby="category-nav">
+        <header><h2 id="category-nav">Categories</h2></header>
+        <ul role="list">
+            {% for category in taxonomies.categories %}
+                <li><a href="{{ category.uri | url }}" title="{{ category.name }} category" aria-label="{{ category.name }} - contains {{ category.count }} posts">{{ category.name }}</a> <span class="badge" aria-hidden="true">{{ category.count }}</span></li>
+            {% endfor %}
+        </ul>
+    </section>
+    {% endif %}
+    {% if taxonomies.tags | length %}
+    <section class="side-nav-section tags-nav" aria-labelledby="tags-nav">
+        <header><h2 id="tags-nav">Tags</h2></header>
+        <ul role="list">
+            {% for tag in taxonomies.tags %}
+                <li><a href="{{ tag.uri | url }}" title="{{ tag.name }} tag">{{ tag.name }}</a></li>
+            {% endfor %}
+        </ul>
+    </section>
+    {% endif %}
+</nav>

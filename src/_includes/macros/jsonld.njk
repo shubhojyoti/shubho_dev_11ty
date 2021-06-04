@@ -1,0 +1,61 @@
+{% macro ldPost(siteUrl, authorName, authorPic, twitter, github, linkedin, devto, postTitle, postUrl, postDesc, pubDate, modDate, featuredImage, keywords) %}
+<script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "mainEntityOfPage":
+        {
+            "@type": "WebPage",
+            "@id": "{{ siteUrl }}"
+        },
+        "author":
+        {
+            "@type": "Person",
+            "name": "{{ authorName }}",
+            "image":
+            {
+                "@type": "ImageObject",
+                "url": "{{ authorPic }}",
+                "width": 548,
+                "height": 548
+            },
+            "url": "{{ siteUrl }}",
+            "sameAs":
+            [
+                "{{ twitter }}",
+                "{{ github }}",
+                "{{ linkedin }}",
+                "{{ devto }}"
+            ],
+            "nationality": "India"
+        },
+        "publisher":
+        {
+            "@type": "Person",
+            "name": "{{ authorName }}",
+            "image":
+            {
+                "@type": "ImageObject",
+                "url": "{{ authorPic }}",
+                "width": 548,
+                "height": 548
+            },
+            "url": "{{ siteUrl }}",
+            "nationality": "India"
+        },
+        "headline": "{{ postTitle }}",
+        "url": "{{ postUrl }}",
+        "datePublished": "{{ pubDate }}",
+        "dateModified": "{{ modDate }}",
+        "image":
+        {
+            "@type": "ImageObject",
+            "url": "{{ featuredImage }}",
+            "width": 652,
+            "height": 300
+        },
+        "keywords": "{{ keywords }}",
+        "description": "{{ postDesc }}"
+    }
+</script>
+{% endmacro %}

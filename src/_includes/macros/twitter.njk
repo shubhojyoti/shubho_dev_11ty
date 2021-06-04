@@ -1,0 +1,19 @@
+{% macro twitterPost(twitterProfile, pageUrl, pageTitle, pageDesc, pageImage) %}
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="{{ pageTitle }}">
+    <meta name="twitter:site" content="{{ twitterProfile }}">
+    <meta name="twitter:url" content="{{ pageUrl }}">
+    <meta name="twitter:description" content="{{ pageDesc }}">
+    <meta name="twitter:image" content="{{ pageImage }}">
+    <meta name="twitter:image:alt" content="Featured image for {{ pageTitle }}">
+{% endmacro %}
+
+{% macro twitterSite(twitterProfile, pageUrl, pageTitle, pageDesc, pageImage, pageImageDesc) %}
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="{{ pageTitle }}">
+    <meta name="twitter:site" content="{{ twitterProfile }}">
+    <meta name="twitter:url" content="{{ pageUrl }}">
+    <meta name="twitter:description" content="{{ pageDesc }}">
+    <meta name="twitter:image" content="{{ pageImage }}">
+    <meta name="twitter:image:alt" content="{{ pageImageDesc }}">
+{% endmacro %}

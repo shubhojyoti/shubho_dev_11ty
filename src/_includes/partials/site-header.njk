@@ -1,0 +1,55 @@
+<header role="banner">
+    <div class="header-container">
+        <div class="logo-container">
+            <a href="#page-main-content" id="skip-content-link">Jump to Main Content</a>
+            <a href="/" class="logo" title="Home Page" aria-label="Go to Home page">
+                <img src="/assets/images/lightlogo.svg" alt="Shubho.dev logo" width="163" height="48" class="site-logo" aria-hidden="true">
+            </a>
+        </div>
+        <div class="nav-container">
+            <nav class="top-nav max-sm:w-full" aria-label="Primary Navigation" role="navigation">
+                <ul role="list">
+                    <li><a href="/blog/" class="primary-nav-link" title="Blog">Blog</a></li>
+                    <li><a href="/about/" class="primary-nav-link" title="About me">About</a></li>
+                </ul>
+            </nav>
+            <div class="theme-toggler-holder js-only">
+                <div class="theme-toggler relative">
+                    <span id="theme-switch-label" class="absolute right-offscreen">Choose a color theme</span>
+                    <button id="theme-switcher-btn" class="theme-switcher" role="button" aria-haspopup="listbox" aria-expanded="false" aria-labelledby="theme-switch-label theme-switcher-btn" aria-label="Using system default theme">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 inline-block" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="false" focusable="false">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                        </svg>
+                        <span class="inline-block ml-1">System Default</span>
+                    </button>
+                    <ul class="theme-switcher-options" tabindex="-1" aria-labelledby="theme-switch-label" role="listbox">
+                        <li id="theme-light-option" tabindex="-1" class="theme-switcher-list-item" role="option" data-option="light">
+                            <div class="theme-switcher-link">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 inline-block" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="false" focusable="false">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/>
+                                </svg>
+                                <span class="inline-block ml-1">Light Theme</span>
+                            </div>
+                        </li>
+                        <li id="theme-dark-option" tabindex="-1" class="theme-switcher-list-item" role="option" data-option="dark">
+                            <div class="theme-switcher-link">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 inline-block" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="false" focusable="false">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/>
+                                </svg>
+                                <span class="inline-block ml-1">Dark Theme</span>
+                            </div>
+                        </li>
+                        <li id="theme-system-option" tabindex="-1" class="theme-switcher-list-item !border-b border-site-body-bgcolor" aria-selected="true" role="option" data-option="system">
+                            <div class="theme-switcher-link">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 inline-block" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="false" focusable="false">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                                </svg>
+                                <span class="inline-block ml-1">System Default</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>

@@ -1,0 +1,23 @@
+.social-block {
+    @apply border-l-0 border-r-0 border-t-2 border-b-2 border-site-home-intro-bordercolor mt-8 pt-0 pb-6 pr-4 text-center min-w-30pc;
+}
+.social {
+    @apply list-none mt-6;
+}
+.social-item {
+    @apply inline-block w-social h-social;
+}
+.social li a {
+    width: 44px;
+    height: 44px;
+    margin: 0;
+    padding: 0;
+    display: block;
+    color: #ffffff;
+}
+.social li a svg path {
+    fill: var(--text-color);
+}
+.social li a:hover svg path {
+    fill: var(--home-intro-social-hover);
+}
