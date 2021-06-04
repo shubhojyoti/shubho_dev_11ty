@@ -10,6 +10,7 @@
     {% block pagemeta %}{% endblock %}
     <link href="{{ "/assets/css/style.css" | url }}" rel="stylesheet" type="text/css">
     <link rel="preload" href="{{ "/assets/css/fonts.css" | url }}" as="style">
+    <link rel="preload" href="{{ "/assets/css/prism.css" | url }}" as="style">
     <script>{{ inlinejs | jsmin | safe }}</script>
     <link rel="preload" href="{{ "/assets/js/scripts.js" | url }}" as="script">
 </head>
@@ -26,6 +27,7 @@
 
 <div class="mask root-hidden"></div>
 <link rel="stylesheet" href="{{ "/assets/css/fonts.css" | url }}" type="text/css">
+<link rel="stylesheet" href="{{ "/assets/css/prism.css" | url }}" type="text/css">
 <script src="{{ "/assets/js/scripts.js" | url }}" defer></script>
 </body>
 </html>

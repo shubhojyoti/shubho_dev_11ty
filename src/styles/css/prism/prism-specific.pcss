@@ -1,18 +1,11 @@
 .highlight-code-line {
-    background-color: #feb;
-    display: block;
-    margin-right: -1em;
-    margin-left: -1em;
-    padding-right: 1em;
-    padding-left: 0.75em;
-    border-left: 0.25em solid #f99;
-}
-
-html.theme-dark {
-    .highlight-code-line {
-        background-color: var(--body-bgcolor);
-        border-left-color: var(--invert-color);
-    }
+    background-color: var(--body-bgcolor) !important;
+    display: block !important;
+    margin-right: -1em !important;
+    margin-left: -1em !important;
+    padding-right: 1em !important;
+    padding-left: 0.75em !important;
+    border-left: 0.15rem solid  var(--invert-color) !important;
 }
 
 .code-highlight {
@@ -33,21 +26,15 @@ html.theme-dark {
 }
 
 .code-highlight {
-    background-color: #fdf6e3;
+    background-color: white;
     margin: 1.5rem auto;
     padding: 0 1em;
     overflow: auto;
+    box-shadow: 0 5px 5px var(--header-shadow);
 }
 html.theme-dark {
     .code-highlight {
-        background-color: hsl(25, 33%, 16%);
-        margin: 1.5rem auto;
-        padding: 0.8rem 1.6rem;
-        overflow: auto;
-    }
-
-    .syntax-lang-name {
-        //color: #000000;
+        background-color: #1e1e1e !important;
     }
 }
 

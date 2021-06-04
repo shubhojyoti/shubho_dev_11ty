@@ -10,7 +10,7 @@ const jsdom = require("jsdom");
 const { JSDOM } = jsdom;
 const Prism = require("prismjs");
 const loadLanguages = require('prismjs/components/index.js');
-loadLanguages(['python', 'tcl', 'yaml', 'php', 'markup', 'css', 'javascript', 'bash', 'jsx']);
+loadLanguages(['python', 'tcl', 'yaml', 'php', 'markup', 'css', 'javascript', 'bash', 'jsx', 'text']);
 const rangeParser = require(`parse-numeric-range`);
 const { AssetCache } = require("@11ty/eleventy-cache-assets");
 
@@ -245,7 +245,7 @@ const highlightCode = (content) => {
                 codeDiv.setAttribute('data-language', language);
                 const syntaxDiv = dom.window.document.createElement('div');
                 syntaxDiv.classList.add('syntax-lang-name');
-                syntaxDiv.innerHTML = language;
+                syntaxDiv.innerHTML = `<div class="hide-for-non-sr">Following code snippet is written in </div>${language}`;
                 codeDiv.appendChild(syntaxDiv);
                 preElement.parentNode.insertBefore(codeDiv, preElement.nextSibling);
                 codeDiv.appendChild(preElement);

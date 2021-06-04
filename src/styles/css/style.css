@@ -1,7 +1,4 @@
 @import "./partials/variables.pcss";
-@import "./prism/prism.dark.pcss";
-@import "./prism/prism.light.pcss";
-@import "./prism/prism-specific.pcss";
 
 @import "tailwindcss/base.css";
 @import "./partials/core.pcss";
@@ -18,11 +15,17 @@
 
 @import "tailwindcss/utilities.css";
 
+
 .root-hidden {
     display: none !important;
 }
 .root-block {
     display: block !important;
+}
+.hide-for-non-sr {
+    height: 0;
+    width: 0;
+    overflow: hidden;
 }
 small, .text_small {font-size: 0.8em;}
 
