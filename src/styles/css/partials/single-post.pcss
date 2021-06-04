@@ -52,6 +52,10 @@
                     @apply pt-0 !important;
                     margin-left: .6rem;
                 }
+
+                .page.metadata {
+                    visibility: hidden;
+                }
             }
 
         }
@@ -88,6 +92,18 @@
             }
         }
 
+        > .image-extras {
+            @apply relative text-site-text-color bg-site-body-bgcolor prose-sm mx-auto pt-8 pl-4 pr-4 max-w-1300;
+
+            > span {
+                @apply inline p-2 border-site-article-separator border italic;
+                background: var(--enhance-text-bgcolor);
+            }
+            a {
+                padding: 0;
+            }
+        }
+
         .pagination {
             @apply max-w-1300 mx-auto;
         }
@@ -120,4 +136,14 @@ hr.single-post-top {
 
 code::before, code::after {
     content: "" !important;
+}
+
+blockquote {
+    @apply border-l-4 pt-2 pb-2 pl-4 pr-4 mt-0 mb-0 ml-8 mr-8 !important;
+    background: var(--enhance-text-bgcolor);
+    border-left-color: var(--enhance-border-color) !important;
+
+    p {
+        color: var(--text-color);
+    }
 }

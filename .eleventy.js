@@ -1,6 +1,12 @@
 const { minify } = require("terser");
 const { chunk } = require("lodash");
 const to = require('await-to-js').default;
+const dayjs = require('dayjs');
+const utc = require('dayjs/plugin/utc');
+const timezone = require('dayjs/plugin/timezone');
+dayjs.extend(utc);
+dayjs.extend(timezone);
+const last_mod = dayjs.utc().format('YYYY-MM-DDTHH:mm:ss+00:00');
 
 function getListPageTitle(type, page, pagination, taxonomy) {
     const totalCount = taxonomy ? taxonomy.pagination.totalNumber : pagination.hrefs.length;
@@ -76,6 +82,114 @@ async function createTaxonomyCollections(collection, type = 'category') {
     return taxMap;
 }
 
+function getBlogListUrls(posts, siteUrl) {
+    const allBlogPages = [];
+    const pageCount = 10;
+    const numberOfPages = Math.ceil(posts.length / pageCount);
+    for (let i = 1; i <= numberOfPages; i++) {
+        if (i === 1) {
+            allBlogPages.push({
+                last_mod,
+                fullUrl: `${siteUrl}/blog/`,
+                type: 'list',
+            });
+        } else {
+            allBlogPages.push({
+                last_mod,
+                fullUrl: `${siteUrl}/blog/page-${i}/`,
+                type: 'list',
+            });
+        }
+    }
+    return allBlogPages;
+}
+
+function getCategoryListUrls(posts, categoryObj, siteUrl) {
+    const allCategoryPages = [];
+    const pageCount = 10;
+    const matchedPosts = posts.filter(post => post.category.indexOf(categoryObj.name) > -1);
+    if (matchedPosts.length === 0) {
+        return allCategoryPages;
+    }
+    const numberOfPages = Math.ceil(matchedPosts.length / pageCount);
+    for (let i = 1; i <= numberOfPages; i++) {
+        if (i === 1) {
+            allCategoryPages.push({
+                ...categoryObj,
+                fullUrl: `${siteUrl}/category/${categoryObj.slug}/`,
+                type: 'category',
+            });
+        } else {
+            allCategoryPages.push({
+                ...categoryObj,
+                fullUrl: `${siteUrl}/category/${categoryObj.slug}/page-${i}/`,
+                type: 'category',
+            });
+        }
+    }
+    return allCategoryPages;
+}
+
+function getTagListUrls(posts, tagObj, siteUrl) {
+    const allTagPages = [];
+    const pageCount = 10;
+    const matchedPosts = posts.filter(post => post.tag.indexOf(tagObj.name) > -1);
+    if (matchedPosts.length === 0) {
+        return allTagPages;
+    }
+    const numberOfPages = Math.ceil(matchedPosts.length / pageCount);
+    for (let i = 1; i <= numberOfPages; i++) {
+        if (i === 1) {
+            allTagPages.push({
+                ...tagObj,
+                fullUrl: `${siteUrl}/tag/${tagObj.slug}/`,
+                type: 'tag',
+            });
+        } else {
+            allTagPages.push({
+                ...tagObj,
+                fullUrl: `${siteUrl}/tag/${tagObj.slug}/page-${i}/`,
+                type: 'tag',
+            });
+        }
+    }
+    return allTagPages;
+}
+
+async function createAllCollection() {
+    const [err, [metadata, posts, pages, { categories, tags }]] = await to(Promise.all([
+        require('./src/_data/metadata'),
+        require('./src/_data/posts'),
+        require('./src/_data/pages'),
+        require('./src/_data/taxonomies'),
+    ]));
+    const allData = [];
+    allData.push({
+        last_mod,
+        fullUrl: metadata().siteUrl,
+        type: 'home',
+    });
+    allData.push(...pages.map((page) => ({
+        ...page,
+        fullUrl: `${metadata().siteUrl}${page.uri}`,
+        type: 'page'
+    })));
+    allData.push(...posts.map((post) => ({
+        ...post,
+        fullUrl: `${metadata().siteUrl}${post.uri}`,
+        type: 'post'
+    })));
+    categories.forEach((category) => {
+        allData.push(...getCategoryListUrls(posts, category, metadata().siteUrl));
+    });
+    tags.forEach((tag) => {
+        allData.push(...getTagListUrls(posts, tag, metadata().siteUrl));
+    });
+    allData.push(...getBlogListUrls(posts, metadata().siteUrl));
+    console.log(JSON.stringify(allData, null, 2));
+    return allData;
+}
+
 function getFeaturedImageBySize(featuredImage, width, height) {
     const images = featuredImage?.node?.mediaDetails?.sizes || [];
     if (images.length === 0) {
@@ -113,7 +227,11 @@ module.exports = (eleventyConfig) => {
     eleventyConfig.addCollection("tagIndex", function(collection) {
         return createTaxonomyCollections(collection, 'tag');
     });
+    eleventyConfig.addCollection("allUrls", function() {
+        return createAllCollection();
+    })
 
+    eleventyConfig.addPassthroughCopy({ "./src/static": "/assets" });
     eleventyConfig.addPassthroughCopy({ "./src/images": "/assets/images" });
     eleventyConfig.addPassthroughCopy({ "./src/_tmp": "/assets" });
     eleventyConfig.addWatchTarget('./src/_tmp');

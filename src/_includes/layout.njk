@@ -8,11 +8,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="color-scheme" content="dark light">
     {% block pagemeta %}{% endblock %}
+    <link rel="sitemap" type="application/xml" href="/sitemap.xml">
     <link href="{{ "/assets/css/style.css" | url }}" rel="stylesheet" type="text/css">
     <link rel="preload" href="{{ "/assets/css/fonts.css" | url }}" as="style">
     <link rel="preload" href="{{ "/assets/css/prism.css" | url }}" as="style">
     <script>{{ inlinejs | jsmin | safe }}</script>
     <link rel="preload" href="{{ "/assets/js/scripts.js" | url }}" as="script">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.1.0/lazysizes.min.js" async defer></script>
 </head>
 <body>
 <div class="page-container">
@@ -21,7 +23,7 @@
     {% block main %}{% endblock %}
 
     <footer class="site-footer" role="contentinfo">
-        <div class="footer-holder">&copy; Copyright Shubhojyoti Bhattacharya 2019 - 2021.<br><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="license">Attribution-NonCommercial-ShareAlike</a></div>
+        <div class="footer-holder">&copy; Copyright Shubhojyoti Bhattacharya 2019 - {{ metadata.currentYear }}<br><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="license">Attribution-NonCommercial-ShareAlike</a></div>
     </footer>
 </div>
 

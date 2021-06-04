@@ -1,3 +1,5 @@
+require('dotenv').config();
+
 module.exports = () => {
     const siteUrl = process.env.SITE_URL || 'http://localhost:8080';
     const siteName = process.env.SITE_NAME || '';
@@ -9,6 +11,7 @@ module.exports = () => {
         siteName,
         twitterProfile,
         featuredImageSite,
-        profilePicMain
+        profilePicMain,
+        currentYear: (new Date()).getFullYear()
     };
 };

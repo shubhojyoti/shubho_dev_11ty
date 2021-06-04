@@ -4,7 +4,7 @@
 {% from "macros/featured-image.njk" import featuredImage %}
 
 {% set authorFullName = author.firstName | concatString(author.lastName, " ") %}
-{% set postUrl = metadata.siteUrl | concatString(page.url) | url %}
+{% set postUrl = metadata.siteUrl | concatString(post.url) | url %}
 {% set featureImageExtras = post.featuredImage.node.imageExtras %}
 
 {% extends "layout.njk" %}
@@ -16,10 +16,12 @@
     <meta name="keywords" content="{{ post.keywords }}">
     <meta name="author" content="{{ author.firstName }} {{ author.lastName }}">
     <meta name="copyright" content="{{ author.firstName }} {{ author.lastName }}">
-    {{ ogPost(postUrl, post.title, authorFullName, post.metaDescription, post.featuredImage | getFeaturedImageBySize(870, 600), post.ogPostDateIst, post.ogModifiedDateIst, post.category[0], post.category, post.tag) }}
+    {{ ogPost(postUrl, post.title, authorFullName, post.metaDescription, post.featuredImage | getFeaturedImageBySize(870, 600), post.ogPostDateIst, post.ogModifiedDateIst, 'developer', 'profile', 'developer') }}
     {{ twitterPost(metadata.twitterProfile, postUrl, post.title, post.metaDescription, post.featuredImage | getFeaturedImageBySize(870, 600)) }}
-    {{ ldPost(metadata.siteUrl | url, authorFullName, metadata.profilePicMain, author.socialHandles.twitter, author.socialHandles.github, author.socialHandles.linkedin, author.socialHandles.devto, post.title, postUrl, post.metaDescription, post.ldPostDate, post.ldModifiedDate, post.featuredImage | getFeaturedImageBySize(870, 600), post.keywords) }}
+    {{ ldPost(metadata.siteUrl | url, authorFullName, metadata.profilePicMain, author.socialHandles.twitter, author.socialHandles.github, author.socialHandles.linkedin, author.socialHandles.devto, post.title, postUrl, post.metaDescription, post.ldPostDate, post.ldModifiedDate, post.featuredImage | getFeaturedImageBySize(652, 300), 'developer, profile, webdev') }}
 {% endblock %}
+
+
 
 {% block main %}
     <main class="single-post" tabindex="-1">
@@ -30,11 +32,11 @@
                 </div>
                 <div class="article-header-holder">
                     <h1 class="article-title" id="page-main-content">{{ post.title }}</h1>
-                    <div class="metadata">
+                    <div class="metadata page">
                         <time class="datetime" datetime="{{ post.postDateUtc }}">{{ post.postDate }}</time>
                         <ul aria-label="Categories and Tags" class="post-tags" role="list">
                             {% for category in post.categories.nodes %}
-                            <li><a href="{{ category.uri | url }}" title="{{ category.name }}">{{ category.name }}</a></li>
+                                <li><a href="{{ category.uri | url }}" title="{{ category.name }}">{{ category.name }}</a></li>
                             {% endfor %}
                             {% if post.tags.nodes | length %}
                                 {% for tag in post.tags.nodes %}
@@ -42,11 +44,9 @@
                                 {% endfor %}
                             {% endif %}
                         </ul>
-                        <div class="read-time">{{ post.readingTime }} min read</div>
                     </div>
                 </div>
             </header>
-            <div aria-hidden="true" class="separator"></div>
             <hr class="single-post-top">
             <div class="article-body">
                 <div class="article-holder">
@@ -58,26 +58,6 @@
                     <span>Featured Image courtesy <a href="{{ featureImageExtras.authorLink }}" target="_blank">{{ featureImageExtras.author }}</a> at <a href="{{ featureImageExtras.providerUrl }}" target="_blank">{{ featureImageExtras.photoProvider }}</a></span>
                 </div>
             {% endif %}
-            <hr>
-
-            <footer class="article-footer">
-                <nav aria-label="Pagination links" class="pagination" role="navigation">
-                    {% if pagination.href.previous %}
-                    <a class="previous" data-direction="backwards" href="{{ pagination.href.previous | url }}">
-                        <svg aria-hidden="true" class="h-4 w-4" fill="none" focusable="false" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M15 19l-7-7 7-7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
-                        </svg>
-                        <span>Previous post</span></a>
-                    {% endif %}
-                    {% if pagination.href.next %}
-                    <a class="next" data-direction="forwards" href="{{ pagination.href.next | url }}"><span>Next post</span>
-                        <svg aria-hidden="true" class="h-4 w-4" fill="none" focusable="false" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M9 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
-                        </svg>
-                    </a>
-                    {% endif %}
-                </nav>
-            </footer>
         </article>
     </main>
 {% endblock %}

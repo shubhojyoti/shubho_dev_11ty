@@ -1,0 +1,36 @@
+---
+permalink: sitemap.xml
+---
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type="text/xsl" href="/assets/sitemap-style.xsl"?>
+<urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd http://www.google.com/schemas/sitemap-image/1.1 http://www.google.com/schemas/sitemap-image/1.1/sitemap-image.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+{% for post in collections.allUrls %}
+    {% if 'home' in post.type %}
+        <url>
+            <loc>{{ post.fullUrl }}</loc>
+            <lastmod>{{ post.last_mod }}</lastmod>
+        </url>
+        {% elif 'page' in post.type or 'post' in post.type %}
+        <url>
+            <loc>{{ post.fullUrl }}</loc>
+            <lastmod>{{ post.last_mod }}</lastmod>
+            {% for img in post.imageList %}
+                <image:image>
+                    <image:loc>{{ img.location }}</image:loc>
+                    <image:title><![CDATA[{{ img.title }}]]></image:title>
+                    <image:caption><![CDATA[{{ img.caption }}]]></image:caption>
+                </image:image>
+            {% endfor %}
+        </url>
+        {% elif 'category' in post.type or 'tag' in post.type %}
+        <url>
+            <loc>{{ post.fullUrl }}</loc>
+            <lastmod>{{ post.last_mod }}</lastmod>
+        </url>
+        {% else %}
+        <url>
+            <loc>{{ post.fullUrl }}</loc>
+            <lastmod>{{ post.last_mod }}</lastmod>
+        </url>
+    {% endif %}
+{% endfor %}
+</urlset>
