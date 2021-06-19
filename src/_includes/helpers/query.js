@@ -20,7 +20,8 @@ const WP_PWD = process.env.WP_PASSWORD || '';
 
 const postDateFormatString = 'MMM DD, YYYY';
 const postDateFormat = 'YYYY-MM-DD';
-const postDateStdFormat = 'YYYY-DD-MMTHH:mm:ss'
+const postDateStdFormat = 'YYYY-MM-DDTHH:mm:ss'
+const postDateRssFormat = 'ddd, DD MMM YYYY HH:mm:ss'
 
 const headers = {
     'Content-Type': 'application/json'
@@ -241,6 +242,7 @@ const getAllPosts = async () => {
                 postDateUtc: dayjs.utc(node.date).format(postDateStdFormat),
                 ogPostDateIst: `${node.date}.000+05:30`,
                 ldPostDate: dayjs.utc(node.date).tz(TZ).format(postDateFormat),
+                rssPostDate: `${dayjs.utc(node.date).tz('GMT').format(postDateRssFormat)} GMT`,
                 modifiedDate: dayjs.utc(node.modified).tz(TZ).format(postDateFormatString),
                 modifiedDateUtc: dayjs.utc(node.modified).format(postDateStdFormat),
                 ogModifiedDateIst: `${node.modified}.000+05:30`,

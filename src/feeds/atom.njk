@@ -1,0 +1,38 @@
+---
+permalink: /feeds/atom.xml
+---
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>{{ metadata.siteUrl }}/</id>
+    <title>{{ metadata.siteName }}</title>
+    <updated>{{ metadata.currentDate }}</updated>
+    <author>
+        <name>{{ author.firstName }} {{ author.lastName }}</name>
+        <email>{{ metadata.email }}</email>
+        <uri>{{ metadata.siteUrl }}</uri>
+    </author>
+    <link rel="alternate" href="{{ metadata.siteUrl }}"/>
+    <link rel="self" href="{{ metadata.siteUrl }}/feeds/atom.xml"/>
+    <subtitle>{{ metadata.subTitle }}</subtitle>
+    <rights>Copyright {{ author.firstName }} {{ author.lastName }} 2019 - {{ metadata.currentYear }}. License: Creative Commons Attribution-NonCommercial-ShareAlike https://creativecommons.org/licenses/by-nc-sa/4.0/</rights>
+    <contributor>
+        <name>{{ author.firstName }} {{ author.lastName }}</name>
+        <email>{{ metadata.email }}</email>
+        <uri>{{ metadata.siteUrl }}</uri>
+    </contributor>
+    {% for post in posts %}
+    <entry>
+        <title type="html">
+            <![CDATA[ {{ post.title | escapeXml }} ]]>
+        </title>
+        <id>{{ metadata.siteUrl }}{{ post.uri }}</id>
+        <link href="{{ metadata.siteUrl }}{{ post.uri }}"/>
+        <updated>{{ post.modifiedDateUtc }}.000Z</updated>
+        <content type="html"><![CDATA[ {{ post.content | safe }} ]]></content>
+        <author>
+            <name>{{ author.firstName }} {{ author.lastName }}</name>
+            <email>{{ metadata.email }}</email>
+            <uri>{{ metadata.siteUrl }}</uri>
+        </author>
+    </entry>
+    {% endfor %}
+</feed>

@@ -1,6 +1,7 @@
 const { minify } = require("terser");
 const { chunk } = require("lodash");
 const to = require('await-to-js').default;
+const xmlEscape = require('xml-escape');
 const dayjs = require('dayjs');
 const utc = require('dayjs/plugin/utc');
 const timezone = require('dayjs/plugin/timezone');
@@ -186,7 +187,7 @@ async function createAllCollection() {
         allData.push(...getTagListUrls(posts, tag, metadata().siteUrl));
     });
     allData.push(...getBlogListUrls(posts, metadata().siteUrl));
-    console.log(JSON.stringify(allData, null, 2));
+    // console.log(JSON.stringify(allData, null, 2));
     return allData;
 }
 
@@ -220,6 +221,15 @@ module.exports = (eleventyConfig) => {
         return `${first}${separator}${second}`;
     });
     eleventyConfig.addFilter("getFeaturedImageBySize", getFeaturedImageBySize);
+    eleventyConfig.addFilter("escapeXml", function(data) {
+        return xmlEscape(data);
+    });
+    eleventyConfig.addFilter("escapeQuotes", function(data) {
+        return data.replace('"', '\\"');
+    });
+    eleventyConfig.addFilter("stringify", function(data) {
+        return JSON.stringify(data);
+    });
 
     eleventyConfig.addCollection("categoryIndex", async function(collection) {
         return createTaxonomyCollections(collection, 'category');
@@ -229,7 +239,7 @@ module.exports = (eleventyConfig) => {
     });
     eleventyConfig.addCollection("allUrls", function() {
         return createAllCollection();
-    })
+    });
 
     eleventyConfig.addPassthroughCopy({ "./src/static": "/assets" });
     eleventyConfig.addPassthroughCopy({ "./src/images": "/assets/images" });

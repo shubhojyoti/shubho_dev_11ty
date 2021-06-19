@@ -1,0 +1,26 @@
+---
+permalink: /feeds/feed.json
+---
+{% set lengthnum = posts | length %}{% set count = 1 %}{
+    "version": "https://jsonfeed.org/version/1",
+    "title": "{{ metadata.siteName }}",
+    "home_page_url": "{{ metadata.siteUrl }}",
+    "feed_url": "{{ metadata.siteUrl }}/feeds/feed.json",
+    "description": "{{ metadata.subTitle }}",
+    "author": {
+        "name": "{{ author.firstName }} {{ author.lastName }}"
+    },
+    "items": [
+    {% for post in posts %}    {
+            "id": "{{ metadata.siteUrl }}{{ post.uri }}",
+            "content_html": "{{ post.content | stringify }}",
+            "url": "{{ metadata.siteUrl }}{{ post.uri }}",
+            "title": "{{ post.title }}",
+            "date_modified": "{{ post.modifiedDateUtc }}.000Z",
+            "author": {
+                "name": "{{ author.firstName }} {{ author.lastName }}",
+                "url": "{{ metadata.siteUrl }}"
+            }
+        }{% if count < lengthnum %},{% endif %}{% set count = count + 1 %}{% endfor %}
+    ]
+}

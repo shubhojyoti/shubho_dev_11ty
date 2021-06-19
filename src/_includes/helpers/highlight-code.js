@@ -4,7 +4,7 @@ const highlightLineRange = require('gatsby-remark-prismjs/directives');
 
 const Prism = require("prismjs");
 const loadLanguages = require('prismjs/components/index.js');
-loadLanguages(['python', 'tcl', 'yaml', 'php', 'markup', 'css', 'javascript', 'bash', 'jsx']);
+loadLanguages(['python', 'tcl', 'yaml', 'php', 'markup', 'css', 'javascript', 'bash', 'jsx', 'json']);
 
 // https://martinschneider.me/articles/building-a-website-with-11ty-and-wordpress/
 module.exports = (content) => {

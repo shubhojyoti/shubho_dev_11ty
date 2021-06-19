@@ -9,10 +9,14 @@ const noop = require('gulp-noop');
 const uglify = require('gulp-uglify');
 const rev = require('gulp-rev');
 const revReplace = require("gulp-rev-replace");
+const glob = require('glob');
+const es = require('event-stream');
 
 const paths = {
     dist: {
         js: 'src/_tmp/js',
+        html: 'dist',
+        css: 'dist/assets/css'
     },
     src: {
         js: 'src/scripts',
@@ -42,6 +46,15 @@ gulp.task('watch:js', () => {
     gulp.watch(`${paths.src.js}/**/*.js`, gulp.series('build:js'));
 });
 
+// CSS PROD REV
+gulp.task('css:rev', () => {
+    return gulp.src(`${paths.dist.css}/*.css`)
+        .pipe(rev())
+        .pipe(gulp.dest(paths.dist.css))
+        .pipe(rev.manifest(`${paths.dist.html}/manifest.json`, { merge: true }))
+        .pipe(gulp.dest('.'));
+});
+
 // Set env variables
 gulp.task('set:env:dev', (cb) => {
     process.env = {
@@ -66,4 +79,7 @@ gulp.task('rev-replace', () => {
 
 gulp.task('dev', gulp.series('set:env:dev', 'build:js'));
 gulp.task('watch', gulp.series('dev', 'watch:js'));
+gulp.task('css', gulp.series('set:env:prod', 'css:rev'));
+gulp.task('build', gulp.series('set:env:prod', 'build:js'));
+
 

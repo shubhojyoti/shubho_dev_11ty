@@ -1,0 +1,24 @@
+---
+permalink: /feeds/index.xml
+---
+<rss xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>{{ metadata.siteName }}</title>
+        <link>{{ metadata.siteUrl }}</link>
+        <description>{{ metadata.subTitle }}</description>
+        <lastBuildDate>{{ metadata.currRssDate }}</lastBuildDate>
+        <copyright>Copyright {{ author.firstName }} {{ author.lastName }} 2019 - {{ metadata.currentYear }}. License: Creative Commons Attribution-NonCommercial-ShareAlike https://creativecommons.org/licenses/by-nc-sa/4.0/</copyright>
+        <atom:link href="{{ metadata.siteUrl }}/feeds/atom.xml" rel="self" type="application/rss+xml"/>
+        {% for post in posts %}
+        <item>
+            <title>
+                <![CDATA[ {{ post.title | escapeXml }} ]]>
+            </title>
+            <link>{{ metadata.siteUrl }}{{ post.uri }}</link>
+            <guid>{{ metadata.siteUrl }}{{ post.uri }}</guid>
+            <pubDate>{{ post.rssPostDate }}</pubDate>
+            <content:encoded><![CDATA[ {{ post.content | safe }} ]]></content:encoded>
+        </item>
+        {% endfor %}
+    </channel>
+</rss>

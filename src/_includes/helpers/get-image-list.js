@@ -25,6 +25,6 @@ module.exports = (content, featuredImage) => {
         };
         postImages.push(imgObj);
     }
-    console.log(JSON.stringify(postImages, null, 2));
+    // console.log(JSON.stringify(postImages, null, 2));
     return postImages;
 };

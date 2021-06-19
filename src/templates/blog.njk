@@ -1,0 +1,9 @@
+---
+layout: "list"
+pagination:
+    data: posts
+    size: 10
+    alias: articles
+type: blog
+permalink: "/blog/{% if pagination.pageNumber > 0 %}page-{{ pagination.pageNumber + 1 }}/{% endif %}index.html"
+---

@@ -157,3 +157,5 @@ module.exports = {
         require('@tailwindcss/typography')
     ],
 }
+
+// 2.1.2
