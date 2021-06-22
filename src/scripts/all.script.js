@@ -75,11 +75,19 @@ function jumpBtnKeyboardEvtHandler() {
     }
 }
 
+function replaceMediaPrint() {
+    const objs = document.querySelectorAll("link[media='print']");
+    objs.forEach((obj) => {
+        obj.setAttribute('media', 'all');
+    });
+}
+
 window.addEventListener('DOMContentLoaded', () => {
     theme.onloadFns();
     documentClickEvt();
     removeAriaHiddenOnSmallScreen();
     jumpBtnKeyboardEvtHandler();
+    replaceMediaPrint();
 });
 
 window.addEventListener('resize', () => {

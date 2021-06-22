@@ -12,12 +12,9 @@
     <link rel="alternate" type="application/rss+xml" title="RSS Feed" href="/feeds/index.xml">
     <link rel="alternate" type="application/atom+xml" title="Atom Feed" href="/feeds/atom.xml">
     <link rel="alternate" type="application/json" title="JSON Feed" href="/feeds/feed.json">
-    <link href="{{ "/assets/css/style.css" | url }}" rel="stylesheet" type="text/css">
-    <link rel="preload" href="{{ "/assets/css/fonts.css" | url }}" as="style">
-    <link rel="preload" href="{{ "/assets/css/prism.css" | url }}" as="style">
     <script>{{ inlinejs | jsmin | safe }}</script>
+    <link rel="stylesheet" href="{{ "/assets/css/style.css" | url }}" type="text/css">
     <link rel="preload" href="{{ "/assets/js/scripts.js" | url }}" as="script">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.1.0/lazysizes.min.js" async defer></script>
 </head>
 <body>
 <div class="page-container">
@@ -31,8 +28,13 @@
 </div>
 
 <div class="mask root-hidden"></div>
-<link rel="stylesheet" href="{{ "/assets/css/fonts.css" | url }}" type="text/css">
-<link rel="stylesheet" href="{{ "/assets/css/prism.css" | url }}" type="text/css">
+<link rel="stylesheet" href="{{ "/assets/css/fonts.css" | url }}" type="text/css" media="print">
+<link rel="stylesheet" href="{{ "/assets/css/prism.css" | url }}" type="text/css" media="print">
+<noscript>
+    <link rel="stylesheet" href="{{ "/assets/css/fonts.css" | url }}" type="text/css" media="all">
+    <link rel="stylesheet" href="{{ "/assets/css/prism.css" | url }}" type="text/css" media="all">
+</noscript>
 <script src="{{ "/assets/js/scripts.js" | url }}" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.1.0/lazysizes.min.js" async defer></script>
 </body>
 </html>

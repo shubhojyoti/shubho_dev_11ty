@@ -9,8 +9,6 @@ const noop = require('gulp-noop');
 const uglify = require('gulp-uglify');
 const rev = require('gulp-rev');
 const revReplace = require("gulp-rev-replace");
-const glob = require('glob');
-const es = require('event-stream');
 
 const paths = {
     dist: {
