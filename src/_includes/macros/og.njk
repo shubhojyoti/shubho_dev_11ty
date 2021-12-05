@@ -11,17 +11,12 @@
     <meta property="article:author" content="{{ pageAuthor }}">
     <meta property="article:published_time" content="{{ pubTime }}">
     <meta property="article:modified_time" content="{{ modTime }}">
-    <meta property="article:section" content="{{ catName }}">
-    {% for cat in cats %}
-        <meta property="article:tag" content="{{ cat }}">
-    {% endfor %}
-    {% for tag in tags %}
-        <meta property="article:tag" content="{{ tag }}">
-    {% endfor %}
-{% endmacro %}
+    <meta property="article:section" content="{{ catName }}">{% for cat in cats %}
+    <meta property="article:tag" content="{{ cat }}">
+    {% endfor %}{% for tag in tags %}<meta property="article:tag" content="{{ tag }}">
+    {% endfor %}{% endmacro %}
 
-{% macro ogSite(pageUrl, pageTitle, pageAuthor, pageDesc, pageImage, pageImageDesc) %}
-    <meta property="og:type" content="website">
+{% macro ogSite(pageUrl, pageTitle, pageAuthor, pageDesc, pageImage, pageImageDesc) %}<meta property="og:type" content="website">
     <meta property="og:title" content="{{ pageTitle }}">
     <meta property="og:url" content="{{ pageUrl }}">
     <meta property="og:image" content="{{ pageImage }}">
@@ -29,5 +24,4 @@
     <meta property="og:image:type" content="image/jpeg" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="627" />
-    <meta property="og:image:alt" content="{{ pageImageDesc }}">
-{% endmacro %}
+    <meta property="og:image:alt" content="{{ pageImageDesc }}">{% endmacro %}

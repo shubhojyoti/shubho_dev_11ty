@@ -6,35 +6,30 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="color-scheme" content="dark light">
-    {% block pagemeta %}{% endblock %}
+    <meta name="color-scheme" content="dark light">{% block pagemeta %}{% endblock %}
     <link rel="sitemap" type="application/xml" href="/sitemap.xml">
     <link rel="alternate" type="application/rss+xml" title="RSS Feed" href="/feeds/index.xml">
     <link rel="alternate" type="application/atom+xml" title="Atom Feed" href="/feeds/atom.xml">
     <link rel="alternate" type="application/json" title="JSON Feed" href="/feeds/feed.json">
     <script>{{ inlinejs | jsmin | safe }}</script>
     <link rel="stylesheet" href="{{ "/assets/css/style.css" | url }}" type="text/css">
+    <link rel="preload" href="{{ "/assets/css/fonts.css" | url }}" as="style">
     <link rel="preload" href="{{ "/assets/js/scripts.js" | url }}" as="script">
 </head>
 <body>
 <div class="page-container">
-    {% include "partials/site-header.njk" %}
-
-    {% block main %}{% endblock %}
-
-    <footer class="site-footer" role="contentinfo">
-        <div class="footer-holder">&copy; Copyright Shubhojyoti Bhattacharya 2019 - {{ metadata.currentYear }}<br><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="license">Attribution-NonCommercial-ShareAlike</a></div>
-    </footer>
+{% include "partials/site-header.njk" %}
+{% block main %}{% endblock %}
+<footer class="site-footer" role="contentinfo">
+    <div class="footer-holder">&copy; Copyright Shubhojyoti Bhattacharya 2019 - {{ metadata.currentYear }}<br><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="license">Attribution-NonCommercial-ShareAlike</a></div>
+</footer>
 </div>
 
 <div class="mask root-hidden"></div>
-<link rel="stylesheet" href="{{ "/assets/css/fonts.css" | url }}" type="text/css" media="print">
-<link rel="stylesheet" href="{{ "/assets/css/prism.css" | url }}" type="text/css" media="print">
-<noscript>
-    <link rel="stylesheet" href="{{ "/assets/css/fonts.css" | url }}" type="text/css" media="all">
-    <link rel="stylesheet" href="{{ "/assets/css/prism.css" | url }}" type="text/css" media="all">
-</noscript>
+<link rel="stylesheet" href="{{ "/assets/css/fonts.css" | url }}" type="text/css" media="print" onload="this.media='all'">{% block pagecss %}
+{% endblock %}
+<noscript><link rel="stylesheet" href="{{ "/assets/css/fonts.css" | url }}" type="text/css" media="all"></noscript>
 <script src="{{ "/assets/js/scripts.js" | url }}" defer></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.1.0/lazysizes.min.js" async defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.1.0/lazysizes.min.js" defer></script>
 </body>
 </html>

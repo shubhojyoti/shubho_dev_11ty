@@ -23,7 +23,11 @@
     <main class="home-page">
         <h1 class="invisible h-0 w-0 overflow-hidden" id="page-main-content">Shubho.Dev - Online home of Shubhojyoti Bhattacharya</h1>
         <div class="home-content-holder">
-            <div class="profile-pic"><img class="w-52 rounded-full" src="/assets/images/profile.jpg" width="208" height="208" alt="Profile picture of Shubhojyoti Bhattacharya"></div>
+            <picture class="profile-pic">
+                <source srcset="/assets/images/profile.webp" type="image/webp">
+                <source srcset="/assets/images/profile.jpg" type="image/jpeg">
+                <img class="w-52 rounded-full" src="/assets/images/profile.jpg" width="208" height="208" alt="Profile picture of Shubhojyoti Bhattacharya">
+            </picture>
             <h2 class="author-name">
                 <span class="firstname block uppercase font-bold">{{ author.firstName }}</span>
                 <span class="lastname block capitalize font-light">{{ author.lastName }}</span>

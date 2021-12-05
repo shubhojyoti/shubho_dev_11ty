@@ -1,5 +1,5 @@
 {% macro ldPost(siteUrl, authorName, authorPic, twitter, github, linkedin, devto, postTitle, postUrl, postDesc, pubDate, modDate, featuredImage, keywords) %}
-<script type="application/ld+json">
+    <script type="application/ld+json">
     {
         "@context": "https://schema.org",
         "@type": "Article",
@@ -56,5 +56,4 @@
         "keywords": "{{ keywords }}",
         "description": "{{ postDesc }}"
     }
-</script>
-{% endmacro %}
+    </script>{% endmacro %}

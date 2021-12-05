@@ -16,48 +16,46 @@
     <meta name="keywords" content="{{ post.keywords }}">
     <meta name="author" content="{{ author.firstName }} {{ author.lastName }}">
     <meta name="copyright" content="{{ author.firstName }} {{ author.lastName }}">
-    {{ ogPost(postUrl, post.title, authorFullName, post.metaDescription, post.featuredImage | getFeaturedImageBySize(870, 600), post.ogPostDateIst, post.ogModifiedDateIst, 'developer', 'profile', 'developer') }}
-    {{ twitterPost(metadata.twitterProfile, postUrl, post.title, post.metaDescription, post.featuredImage | getFeaturedImageBySize(870, 600)) }}
-    {{ ldPost(metadata.siteUrl | url, authorFullName, metadata.profilePicMain, author.socialHandles.twitter, author.socialHandles.github, author.socialHandles.linkedin, author.socialHandles.devto, post.title, postUrl, post.metaDescription, post.ldPostDate, post.ldModifiedDate, post.featuredImage | getFeaturedImageBySize(652, 300), 'developer, profile, webdev') }}
+    {{ ogPost(postUrl, post.title, authorFullName, post.metaDescription, post.featuredImage | getFeaturedImageBySize(870, 600), post.ogPostDateIst, post.ogModifiedDateIst, 'developer', ['profile', 'developer']) }}{{ twitterPost(metadata.twitterProfile, postUrl, post.title, post.metaDescription, post.featuredImage | getFeaturedImageBySize(870, 600)) }}{{ ldPost(metadata.siteUrl | url, authorFullName, metadata.profilePicMain, author.socialHandles.twitter, author.socialHandles.github, author.socialHandles.linkedin, author.socialHandles.devto, post.title, postUrl, post.metaDescription, post.ldPostDate, post.ldModifiedDate, post.featuredImage | getFeaturedImageBySize(652, 300), 'developer, profile, webdev') }}
 {% endblock %}
 
 
 
 {% block main %}
-    <main class="single-post" tabindex="-1">
-        <article aria-labelledby="page-main-content" class="single-post-article">
-            <header class="article-header">
-                <div aria-hidden="true" class="post-bg-image">
-                    {{ featuredImage(post.featuredImage) }}
-                </div>
-                <div class="article-header-holder">
-                    <h1 class="article-title" id="page-main-content">{{ post.title }}</h1>
-                    <div class="metadata page">
-                        <time class="datetime" datetime="{{ post.postDateUtc }}">{{ post.postDate }}</time>
-                        <ul aria-label="Categories and Tags" class="post-tags" role="list">
-                            {% for category in post.categories.nodes %}
-                                <li><a href="{{ category.uri | url }}" title="{{ category.name }}">{{ category.name }}</a></li>
+<main class="single-post" tabindex="-1">
+    <article aria-labelledby="page-main-content" class="single-post-article">
+        <header class="article-header">
+            <div aria-hidden="true" class="post-bg-image">
+                {{ featuredImage(post.featuredImage) }}
+            </div>
+            <div class="article-header-holder">
+                <h1 class="article-title" id="page-main-content">{{ post.title }}</h1>
+                <div class="metadata page">
+                    <time class="datetime" datetime="{{ post.postDateUtc }}">{{ post.postDate }}</time>
+                    <ul aria-label="Categories and Tags" class="post-tags" role="list">
+                        {% for category in post.categories.nodes %}
+                            <li><a href="{{ category.uri | url }}" title="{{ category.name }}">{{ category.name }}</a></li>
+                        {% endfor %}
+                        {% if post.tags.nodes | length %}
+                            {% for tag in post.tags.nodes %}
+                                <li><a href="{{ tag.uri | url }}" title="{{ tag.name }}">{{ tag.name }}</a></li>
                             {% endfor %}
-                            {% if post.tags.nodes | length %}
-                                {% for tag in post.tags.nodes %}
-                                    <li><a href="{{ tag.uri | url }}" title="{{ tag.name }}">{{ tag.name }}</a></li>
-                                {% endfor %}
-                            {% endif %}
-                        </ul>
-                    </div>
-                </div>
-            </header>
-            <hr class="single-post-top">
-            <div class="article-body">
-                <div class="article-holder">
-                    {{ post.content | safe }}
+                        {% endif %}
+                    </ul>
                 </div>
             </div>
-            {% if featureImageExtras.author %}
-                <div class="image-extras">
-                    <span>Featured Image courtesy <a href="{{ featureImageExtras.authorLink }}" target="_blank">{{ featureImageExtras.author }}</a> at <a href="{{ featureImageExtras.providerUrl }}" target="_blank">{{ featureImageExtras.photoProvider }}</a></span>
-                </div>
-            {% endif %}
-        </article>
-    </main>
+        </header>
+        <hr class="single-post-top">
+        <div class="article-body">
+            <div class="article-holder">
+                {{ post.content | safe }}
+            </div>
+        </div>
+        {% if featureImageExtras.author %}
+            <div class="image-extras">
+                <span>Featured Image courtesy <a href="{{ featureImageExtras.authorLink }}" target="_blank">{{ featureImageExtras.author }}</a> at <a href="{{ featureImageExtras.providerUrl }}" target="_blank">{{ featureImageExtras.photoProvider }}</a></span>
+            </div>
+        {% endif %}
+    </article>
+</main>
 {% endblock %}
